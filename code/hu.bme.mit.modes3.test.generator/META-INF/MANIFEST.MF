@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Generator
+Bundle-SymbolicName: hu.bme.mit.modes3.test.generator;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Export-Package: hu.bme.mit.modes3.test.generator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime;bundle-version="3.11.1",
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ hu.bme.mit.modes3.test.TestLanguage
+

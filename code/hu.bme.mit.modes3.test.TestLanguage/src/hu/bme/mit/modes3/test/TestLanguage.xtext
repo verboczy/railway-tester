@@ -1,0 +1,82 @@
+grammar hu.bme.mit.modes3.test.TestLanguage with org.eclipse.xtext.common.Terminals
+
+generate testLanguage "http://www.bme.hu/mit/modes3/test/TestLanguage"
+
+Model:
+	(initialState = InitialState)	// Specification of the initial state.
+	(caseDescription += CaseDescription)*		// At least one pair of steps and expectations. 
+;
+
+// The initial state.
+InitialState:
+	'[InitialState]'
+	'turnoutId' '=' turnoutID = INT	// The id is given only in the initial state.
+	(turnout = Turnout)?
+;
+
+// A pair of steps and expectations.
+CaseDescription:
+	caseName = CaseName
+	steps = Steps
+	expect = Expectations
+;
+
+CaseName:
+	'Name of the test case' ':' name = ID 
+;
+
+// May be any change about a turnout (except the id) or a section or a new lock.
+Steps:
+	'[Step]'
+	(comment = Comment)
+	(changedTurnout = Turnout)?
+	(section += Section)+
+;
+
+Comment:
+	'Short description' ':' comment = STRING
+;
+
+// A turnout has a state.
+Turnout:
+	'Turnout state is ' turnoutState = ('STRAIGHT' | 'DIVERGENT')
+;
+
+// A section has a position where it connects to the turnout, and a state.
+Section:
+	(straightSection = StraightSection)
+	(DivergentSection = DivergentSection)
+	(TopSection = TopSection)
+;
+
+StraightSection:
+	'Section connecting from STRAIGHT is ' straightSectionState = ('FREE' | 'OCCUPIED')
+;
+
+DivergentSection:
+	'Section connecting from DIVERGENT is ' divergentSectionState = ('FREE' | 'OCCUPIED')
+;
+
+TopSection:
+	'Section connecting from TOP is ' topSectionState = ('FREE' | 'OCCUPIED')
+;
+
+// Shows which sections are expected state of each section
+Expectations:
+	'[Expected]'
+	(straightExpectation = StraightExpectation)
+	(divergentExpectation = DivergentExpectation)
+	(topExpectation = TopExpectation)
+;
+
+StraightExpectation:
+	'Section connecting from STRAIGHT is expected to be ' straightExpectedState = ('ENABLED' | 'DISABLED')
+;
+
+DivergentExpectation:
+	'Section connecting from DIVERGENT is expected to be ' divergentExpectedState = ('ENABLED' | 'DISABLED')
+;
+
+TopExpectation:
+	'Section connecting from TOP is expected to be ' topExpectedState = ('ENABLED' | 'DISABLED')
+;

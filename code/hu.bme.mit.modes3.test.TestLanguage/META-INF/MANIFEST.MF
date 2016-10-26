@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.modes3.test.TestLanguage
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: hu.bme.mit.modes3.test.TestLanguage; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: hu.bme.mit.modes3.test.parser.antlr.internal,
+ hu.bme.mit.modes3.test.generator,
+ hu.bme.mit.modes3.test.scoping,
+ hu.bme.mit.modes3.test.services,
+ hu.bme.mit.modes3.test.testLanguage,
+ hu.bme.mit.modes3.test.validation,
+ hu.bme.mit.modes3.test.testLanguage.impl,
+ hu.bme.mit.modes3.test.serializer,
+ hu.bme.mit.modes3.test.testLanguage.util,
+ hu.bme.mit.modes3.test,
+ hu.bme.mit.modes3.test.parser.antlr
+Import-Package: org.apache.log4j
