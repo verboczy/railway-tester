@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java">
+		<attributes>
+			<attribute name="FROM_GRADLE_MODEL" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src/test/java">
+		<attributes>
+			<attribute name="FROM_GRADLE_MODEL" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="src" path="/hu.bme.mit.inf.modes3.components.safetylogic.componentlevel.sc"/>
+	<classpathentry kind="src" path="/hu.bme.mit.inf.modes3.messaging.communication"/>
+	<classpathentry kind="src" path="/hu.bme.mit.inf.modes3.components.common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hu.bme.mit.inf.modes3.messaging.mms"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hu.bme.mit.inf.modes3.transports.common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hu.bme.mit.inf.modes3.transports.mqtt"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hu.bme.mit.inf.modes3.transports.zeromq"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.21/be4b3c560a37e69b6c58278116740db28832232c/slf4j-simple-1.7.21.jar" sourcepath="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.21/58eb8609a8f14e5bbf4d260ce5f364724079227/slf4j-simple-1.7.21-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/ce1edb914c94ebc388f086c6827e8bdeec71ac2/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/org.eclipse.paho/org.eclipse.paho.client.mqttv3/1.1.0/89d827ffa47c241f2627421ef1d6c7a8c207a341/org.eclipse.paho.client.mqttv3-1.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.2/98cafc6081d5632b61be2c9e60650b64ddbc637c/jopt-simple-5.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.lib/2.9.0/d58aae519ab9e235c45ea0e76aac38f6088de400/org.eclipse.xtext.xbase.lib-2.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.10/4b95f4897fa13f2cd904aee711aeafc0c5295cd8/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/io.moquette/moquette-netty-parser/0.8/7ba496f21dd8d06e9e80b957816e4a7204e9d0c4/moquette-netty-parser-0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/io.moquette/moquette-parser-commons/0.8/6bed63ae26dac4e9a61360d4fa04af863a48307a/moquette-parser-commons-0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/org.mapdb/mapdb/1.0.8/64485a221d9095fc7ab9b50cc34c6b4b58467e2e/mapdb-1.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.0.33.Final/287c2378318efc12d6bfe00835cd66317fc53dcd/netty-transport-4.0.33.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.0.33.Final/88325df280c3ba83011cf442883f9f55dc83d5bb/netty-handler-4.0.33.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.0.33.Final/aec23f9837699cf1a900a3c86c2b314d30da2454/netty-codec-http-4.0.33.Final.jar"/>
+	<classpathentry kind="src" path="/hu.bme.mit.inf.modes3.utils.common"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.0.33.Final/1a1fde71cb95a6e18754b0fd7ac6749f15a86543/netty-common-4.0.33.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/io.moquette/moquette-broker/0.8/33073ad149868832d1dc499d180dded1e2465fc5/moquette-broker-0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.0.33.Final/56c31f1e373a9374f56173383fe8b6e089ea0351/netty-codec-4.0.33.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.0.33.Final/dd14c35b020af7aa1c6fed7ec5e67a2aa165619e/netty-buffer-4.0.33.Final.jar"/>
+	<classpathentry kind="src" path="/hu.bme.mit.inf.modes3.messaging.proto"/>
+	<classpathentry kind="lib" path="C:/Users/Marosi/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.0.0/6d325aa7c921661d84577c0a93d82da4df9fa4c8/protobuf-java-3.0.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
