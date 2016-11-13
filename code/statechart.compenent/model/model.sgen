@@ -1,0 +1,31 @@
+GeneratorModel for yakindu::java {
+
+	statechart Section2 {
+
+		feature Outlet {			
+			targetProject = "bence.statechart.compenent"
+			targetFolder = "src-gen"
+			libraryTargetFolder = "src"
+		}
+		
+		feature GeneralFeatures {
+			InterfaceObserverSupport = true
+			TimerService = true
+		}
+		
+	}
+
+	statechart Turnout {
+
+		feature Outlet {
+			targetProject = "bence.statechart.compenent"
+			targetFolder = "src-gen"
+			libraryTargetFolder = "src"
+		}
+		
+		feature GeneralFeatures {
+			InterfaceObserverSupport = true
+			TimerService = true
+		}
+	}
+}
