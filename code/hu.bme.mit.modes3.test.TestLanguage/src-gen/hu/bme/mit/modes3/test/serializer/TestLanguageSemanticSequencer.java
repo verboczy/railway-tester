@@ -8,13 +8,12 @@ import hu.bme.mit.modes3.test.services.TestLanguageGrammarAccess;
 import hu.bme.mit.modes3.test.testLanguage.CaseDescription;
 import hu.bme.mit.modes3.test.testLanguage.CaseName;
 import hu.bme.mit.modes3.test.testLanguage.Comment;
+import hu.bme.mit.modes3.test.testLanguage.Component;
 import hu.bme.mit.modes3.test.testLanguage.DivergentExpectation;
 import hu.bme.mit.modes3.test.testLanguage.DivergentSection;
 import hu.bme.mit.modes3.test.testLanguage.Expectations;
-import hu.bme.mit.modes3.test.testLanguage.InitialState;
 import hu.bme.mit.modes3.test.testLanguage.Model;
 import hu.bme.mit.modes3.test.testLanguage.Section;
-import hu.bme.mit.modes3.test.testLanguage.Steps;
 import hu.bme.mit.modes3.test.testLanguage.StraightExpectation;
 import hu.bme.mit.modes3.test.testLanguage.StraightSection;
 import hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage;
@@ -55,6 +54,9 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case TestLanguagePackage.COMMENT:
 				sequence_Comment(context, (Comment) semanticObject); 
 				return; 
+			case TestLanguagePackage.COMPONENT:
+				sequence_Component(context, (Component) semanticObject); 
+				return; 
 			case TestLanguagePackage.DIVERGENT_EXPECTATION:
 				sequence_DivergentExpectation(context, (DivergentExpectation) semanticObject); 
 				return; 
@@ -64,17 +66,11 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case TestLanguagePackage.EXPECTATIONS:
 				sequence_Expectations(context, (Expectations) semanticObject); 
 				return; 
-			case TestLanguagePackage.INITIAL_STATE:
-				sequence_InitialState(context, (InitialState) semanticObject); 
-				return; 
 			case TestLanguagePackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
 			case TestLanguagePackage.SECTION:
 				sequence_Section(context, (Section) semanticObject); 
-				return; 
-			case TestLanguagePackage.STEPS:
-				sequence_Steps(context, (Steps) semanticObject); 
 				return; 
 			case TestLanguagePackage.STRAIGHT_EXPECTATION:
 				sequence_StraightExpectation(context, (StraightExpectation) semanticObject); 
@@ -101,22 +97,10 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     CaseDescription returns CaseDescription
 	 *
 	 * Constraint:
-	 *     (caseName=CaseName steps=Steps expect=Expectations)
+	 *     (caseName=CaseName comment=Comment? components+=Component+ expect+=Expectations+)
 	 */
 	protected void sequence_CaseDescription(ISerializationContext context, CaseDescription semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TestLanguagePackage.Literals.CASE_DESCRIPTION__CASE_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestLanguagePackage.Literals.CASE_DESCRIPTION__CASE_NAME));
-			if (transientValues.isValueTransient(semanticObject, TestLanguagePackage.Literals.CASE_DESCRIPTION__STEPS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestLanguagePackage.Literals.CASE_DESCRIPTION__STEPS));
-			if (transientValues.isValueTransient(semanticObject, TestLanguagePackage.Literals.CASE_DESCRIPTION__EXPECT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestLanguagePackage.Literals.CASE_DESCRIPTION__EXPECT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCaseDescriptionAccess().getCaseNameCaseNameParserRuleCall_0_0(), semanticObject.getCaseName());
-		feeder.accept(grammarAccess.getCaseDescriptionAccess().getStepsStepsParserRuleCall_1_0(), semanticObject.getSteps());
-		feeder.accept(grammarAccess.getCaseDescriptionAccess().getExpectExpectationsParserRuleCall_2_0(), semanticObject.getExpect());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -133,7 +117,7 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestLanguagePackage.Literals.CASE_NAME__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCaseNameAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getCaseNameAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -158,10 +142,31 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
+	 *     Component returns Component
+	 *
+	 * Constraint:
+	 *     (turnout=Turnout section=Section)
+	 */
+	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TestLanguagePackage.Literals.COMPONENT__TURNOUT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestLanguagePackage.Literals.COMPONENT__TURNOUT));
+			if (transientValues.isValueTransient(semanticObject, TestLanguagePackage.Literals.COMPONENT__SECTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestLanguagePackage.Literals.COMPONENT__SECTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getComponentAccess().getTurnoutTurnoutParserRuleCall_1_0(), semanticObject.getTurnout());
+		feeder.accept(grammarAccess.getComponentAccess().getSectionSectionParserRuleCall_2_0(), semanticObject.getSection());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     DivergentExpectation returns DivergentExpectation
 	 *
 	 * Constraint:
-	 *     (divergentExpectedState='ENABLED' | divergentExpectedState='DISABLED')
+	 *     ((divergentExpectedState='ENABLED' | divergentExpectedState='DISABLED') divID=INT)
 	 */
 	protected void sequence_DivergentExpectation(ISerializationContext context, DivergentExpectation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -173,7 +178,7 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     DivergentSection returns DivergentSection
 	 *
 	 * Constraint:
-	 *     (divergentSectionState='FREE' | divergentSectionState='OCCUPIED')
+	 *     ((divergentSectionState='FREE' | divergentSectionState='OCCUPIED') divID=INT)
 	 */
 	protected void sequence_DivergentSection(ISerializationContext context, DivergentSection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -185,10 +190,12 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Expectations returns Expectations
 	 *
 	 * Constraint:
-	 *     (straightExpectation=StraightExpectation divergentExpectation=DivergentExpectation topExpectation=TopExpectation)
+	 *     (expectedTurnoutID=INT straightExpectation=StraightExpectation divergentExpectation=DivergentExpectation topExpectation=TopExpectation)
 	 */
 	protected void sequence_Expectations(ISerializationContext context, Expectations semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TestLanguagePackage.Literals.EXPECTATIONS__EXPECTED_TURNOUT_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestLanguagePackage.Literals.EXPECTATIONS__EXPECTED_TURNOUT_ID));
 			if (transientValues.isValueTransient(semanticObject, TestLanguagePackage.Literals.EXPECTATIONS__STRAIGHT_EXPECTATION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestLanguagePackage.Literals.EXPECTATIONS__STRAIGHT_EXPECTATION));
 			if (transientValues.isValueTransient(semanticObject, TestLanguagePackage.Literals.EXPECTATIONS__DIVERGENT_EXPECTATION) == ValueTransient.YES)
@@ -197,22 +204,11 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestLanguagePackage.Literals.EXPECTATIONS__TOP_EXPECTATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExpectationsAccess().getStraightExpectationStraightExpectationParserRuleCall_1_0(), semanticObject.getStraightExpectation());
-		feeder.accept(grammarAccess.getExpectationsAccess().getDivergentExpectationDivergentExpectationParserRuleCall_2_0(), semanticObject.getDivergentExpectation());
-		feeder.accept(grammarAccess.getExpectationsAccess().getTopExpectationTopExpectationParserRuleCall_3_0(), semanticObject.getTopExpectation());
+		feeder.accept(grammarAccess.getExpectationsAccess().getExpectedTurnoutIDINTTerminalRuleCall_2_0(), semanticObject.getExpectedTurnoutID());
+		feeder.accept(grammarAccess.getExpectationsAccess().getStraightExpectationStraightExpectationParserRuleCall_3_0(), semanticObject.getStraightExpectation());
+		feeder.accept(grammarAccess.getExpectationsAccess().getDivergentExpectationDivergentExpectationParserRuleCall_4_0(), semanticObject.getDivergentExpectation());
+		feeder.accept(grammarAccess.getExpectationsAccess().getTopExpectationTopExpectationParserRuleCall_5_0(), semanticObject.getTopExpectation());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     InitialState returns InitialState
-	 *
-	 * Constraint:
-	 *     (turnoutID=INT turnout=Turnout?)
-	 */
-	protected void sequence_InitialState(ISerializationContext context, InitialState semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -221,7 +217,7 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (initialState=InitialState caseDescription+=CaseDescription*)
+	 *     caseDescription+=CaseDescription+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -233,7 +229,7 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Section returns Section
 	 *
 	 * Constraint:
-	 *     (straightSection=StraightSection DivergentSection=DivergentSection TopSection=TopSection)
+	 *     (straightSection=StraightSection divergentSection=DivergentSection topSection=TopSection)
 	 */
 	protected void sequence_Section(ISerializationContext context, Section semanticObject) {
 		if (errorAcceptor != null) {
@@ -254,22 +250,10 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     Steps returns Steps
-	 *
-	 * Constraint:
-	 *     (comment=Comment changedTurnout=Turnout? section+=Section+)
-	 */
-	protected void sequence_Steps(ISerializationContext context, Steps semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     StraightExpectation returns StraightExpectation
 	 *
 	 * Constraint:
-	 *     (straightExpectedState='ENABLED' | straightExpectedState='DISABLED')
+	 *     ((straightExpectedState='ENABLED' | straightExpectedState='DISABLED') strID=INT)
 	 */
 	protected void sequence_StraightExpectation(ISerializationContext context, StraightExpectation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -281,7 +265,7 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     StraightSection returns StraightSection
 	 *
 	 * Constraint:
-	 *     (straightSectionState='FREE' | straightSectionState='OCCUPIED')
+	 *     ((straightSectionState='FREE' | straightSectionState='OCCUPIED') strID=INT)
 	 */
 	protected void sequence_StraightSection(ISerializationContext context, StraightSection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -293,7 +277,7 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     TopExpectation returns TopExpectation
 	 *
 	 * Constraint:
-	 *     (topExpectedState='ENABLED' | topExpectedState='DISABLED')
+	 *     ((topExpectedState='ENABLED' | topExpectedState='DISABLED') topID=INT)
 	 */
 	protected void sequence_TopExpectation(ISerializationContext context, TopExpectation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -305,7 +289,7 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     TopSection returns TopSection
 	 *
 	 * Constraint:
-	 *     (topSectionState='FREE' | topSectionState='OCCUPIED')
+	 *     ((topSectionState='FREE' | topSectionState='OCCUPIED') topID=INT)
 	 */
 	protected void sequence_TopSection(ISerializationContext context, TopSection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -317,7 +301,7 @@ public class TestLanguageSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Turnout returns Turnout
 	 *
 	 * Constraint:
-	 *     (turnoutState='STRAIGHT' | turnoutState='DIVERGENT')
+	 *     (turnoutID=INT (turnoutState='STRAIGHT' | turnoutState='DIVERGENT'))
 	 */
 	protected void sequence_Turnout(ISerializationContext context, Turnout semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

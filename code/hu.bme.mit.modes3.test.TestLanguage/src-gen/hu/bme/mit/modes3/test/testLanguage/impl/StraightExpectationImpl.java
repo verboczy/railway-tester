@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.StraightExpectationImpl#getStraightExpectedState <em>Straight Expected State</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.StraightExpectationImpl#getStrID <em>Str ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +48,26 @@ public class StraightExpectationImpl extends MinimalEObjectImpl.Container implem
    * @ordered
    */
   protected String straightExpectedState = STRAIGHT_EXPECTED_STATE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getStrID() <em>Str ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStrID()
+   * @generated
+   * @ordered
+   */
+  protected static final int STR_ID_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getStrID() <em>Str ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStrID()
+   * @generated
+   * @ordered
+   */
+  protected int strID = STR_ID_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,6 +118,29 @@ public class StraightExpectationImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getStrID()
+  {
+    return strID;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStrID(int newStrID)
+  {
+    int oldStrID = strID;
+    strID = newStrID;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.STRAIGHT_EXPECTATION__STR_ID, oldStrID, strID));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -104,6 +148,8 @@ public class StraightExpectationImpl extends MinimalEObjectImpl.Container implem
     {
       case TestLanguagePackage.STRAIGHT_EXPECTATION__STRAIGHT_EXPECTED_STATE:
         return getStraightExpectedState();
+      case TestLanguagePackage.STRAIGHT_EXPECTATION__STR_ID:
+        return getStrID();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,6 +166,9 @@ public class StraightExpectationImpl extends MinimalEObjectImpl.Container implem
     {
       case TestLanguagePackage.STRAIGHT_EXPECTATION__STRAIGHT_EXPECTED_STATE:
         setStraightExpectedState((String)newValue);
+        return;
+      case TestLanguagePackage.STRAIGHT_EXPECTATION__STR_ID:
+        setStrID((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,6 +187,9 @@ public class StraightExpectationImpl extends MinimalEObjectImpl.Container implem
       case TestLanguagePackage.STRAIGHT_EXPECTATION__STRAIGHT_EXPECTED_STATE:
         setStraightExpectedState(STRAIGHT_EXPECTED_STATE_EDEFAULT);
         return;
+      case TestLanguagePackage.STRAIGHT_EXPECTATION__STR_ID:
+        setStrID(STR_ID_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -154,6 +206,8 @@ public class StraightExpectationImpl extends MinimalEObjectImpl.Container implem
     {
       case TestLanguagePackage.STRAIGHT_EXPECTATION__STRAIGHT_EXPECTED_STATE:
         return STRAIGHT_EXPECTED_STATE_EDEFAULT == null ? straightExpectedState != null : !STRAIGHT_EXPECTED_STATE_EDEFAULT.equals(straightExpectedState);
+      case TestLanguagePackage.STRAIGHT_EXPECTATION__STR_ID:
+        return strID != STR_ID_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -171,6 +225,8 @@ public class StraightExpectationImpl extends MinimalEObjectImpl.Container implem
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (straightExpectedState: ");
     result.append(straightExpectedState);
+    result.append(", strID: ");
+    result.append(strID);
     result.append(')');
     return result.toString();
   }

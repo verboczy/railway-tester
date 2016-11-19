@@ -24,183 +24,93 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.Model");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cInitialStateAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cInitialStateInitialStateParserRuleCall_0_0 = (RuleCall)cInitialStateAssignment_0.eContents().get(0);
-		private final Assignment cCaseDescriptionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCaseDescriptionCaseDescriptionParserRuleCall_1_0 = (RuleCall)cCaseDescriptionAssignment_1.eContents().get(0);
+		private final Assignment cCaseDescriptionAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cCaseDescriptionCaseDescriptionParserRuleCall_0 = (RuleCall)cCaseDescriptionAssignment.eContents().get(0);
 		
 		//Model:
-		//	initialState=InitialState caseDescription+=CaseDescription* // At least one pair of steps and expectations. 
+		//	caseDescription+=CaseDescription* // At least one pair of steps and expectations. 
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//initialState=InitialState caseDescription+=CaseDescription*
-		public Group getGroup() { return cGroup; }
-		
-		//initialState=InitialState
-		public Assignment getInitialStateAssignment_0() { return cInitialStateAssignment_0; }
-		
-		//InitialState
-		public RuleCall getInitialStateInitialStateParserRuleCall_0_0() { return cInitialStateInitialStateParserRuleCall_0_0; }
-		
-		//// Specification of the initial state.
 		//caseDescription+=CaseDescription*
-		public Assignment getCaseDescriptionAssignment_1() { return cCaseDescriptionAssignment_1; }
+		public Assignment getCaseDescriptionAssignment() { return cCaseDescriptionAssignment; }
 		
 		//CaseDescription
-		public RuleCall getCaseDescriptionCaseDescriptionParserRuleCall_1_0() { return cCaseDescriptionCaseDescriptionParserRuleCall_1_0; }
-	}
-	public class InitialStateElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.InitialState");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cInitialStateKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cTurnoutIdKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTurnoutIDAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTurnoutIDINTTerminalRuleCall_3_0 = (RuleCall)cTurnoutIDAssignment_3.eContents().get(0);
-		private final Assignment cTurnoutAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cTurnoutTurnoutParserRuleCall_4_0 = (RuleCall)cTurnoutAssignment_4.eContents().get(0);
-		
-		//// The initial state.
-		//InitialState:
-		//	'[InitialState]'
-		//	'turnoutId' '=' turnoutID=INT // The id is given only in the initial state.
-		//	turnout=Turnout?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'[InitialState]' 'turnoutId' '=' turnoutID=INT // The id is given only in the initial state.
-		//turnout=Turnout?
-		public Group getGroup() { return cGroup; }
-		
-		//'[InitialState]'
-		public Keyword getInitialStateKeyword_0() { return cInitialStateKeyword_0; }
-		
-		//'turnoutId'
-		public Keyword getTurnoutIdKeyword_1() { return cTurnoutIdKeyword_1; }
-		
-		//'='
-		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
-		
-		//turnoutID=INT
-		public Assignment getTurnoutIDAssignment_3() { return cTurnoutIDAssignment_3; }
-		
-		//INT
-		public RuleCall getTurnoutIDINTTerminalRuleCall_3_0() { return cTurnoutIDINTTerminalRuleCall_3_0; }
-		
-		//// The id is given only in the initial state.
-		//turnout=Turnout?
-		public Assignment getTurnoutAssignment_4() { return cTurnoutAssignment_4; }
-		
-		//Turnout
-		public RuleCall getTurnoutTurnoutParserRuleCall_4_0() { return cTurnoutTurnoutParserRuleCall_4_0; }
+		public RuleCall getCaseDescriptionCaseDescriptionParserRuleCall_0() { return cCaseDescriptionCaseDescriptionParserRuleCall_0; }
 	}
 	public class CaseDescriptionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.CaseDescription");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cCaseNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cCaseNameCaseNameParserRuleCall_0_0 = (RuleCall)cCaseNameAssignment_0.eContents().get(0);
-		private final Assignment cStepsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cStepsStepsParserRuleCall_1_0 = (RuleCall)cStepsAssignment_1.eContents().get(0);
-		private final Assignment cExpectAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cExpectExpectationsParserRuleCall_2_0 = (RuleCall)cExpectAssignment_2.eContents().get(0);
+		private final Keyword cTestCaseKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cCaseNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCaseNameCaseNameParserRuleCall_1_0 = (RuleCall)cCaseNameAssignment_1.eContents().get(0);
+		private final Assignment cCommentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCommentCommentParserRuleCall_2_0 = (RuleCall)cCommentAssignment_2.eContents().get(0);
+		private final Assignment cComponentsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cComponentsComponentParserRuleCall_3_0 = (RuleCall)cComponentsAssignment_3.eContents().get(0);
+		private final Assignment cExpectAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cExpectExpectationsParserRuleCall_4_0 = (RuleCall)cExpectAssignment_4.eContents().get(0);
 		
 		//// A pair of steps and expectations.
 		//CaseDescription:
-		//	caseName=CaseName
-		//	steps=Steps
-		//	expect=Expectations;
+		//	'[TestCase]'
+		//	caseName=CaseName comment=Comment?
+		//	components+=Component+
+		//	expect+=Expectations+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//caseName=CaseName steps=Steps expect=Expectations
+		//'[TestCase]' caseName=CaseName comment=Comment? components+=Component+ expect+=Expectations+
 		public Group getGroup() { return cGroup; }
 		
+		//'[TestCase]'
+		public Keyword getTestCaseKeyword_0() { return cTestCaseKeyword_0; }
+		
 		//caseName=CaseName
-		public Assignment getCaseNameAssignment_0() { return cCaseNameAssignment_0; }
+		public Assignment getCaseNameAssignment_1() { return cCaseNameAssignment_1; }
 		
 		//CaseName
-		public RuleCall getCaseNameCaseNameParserRuleCall_0_0() { return cCaseNameCaseNameParserRuleCall_0_0; }
+		public RuleCall getCaseNameCaseNameParserRuleCall_1_0() { return cCaseNameCaseNameParserRuleCall_1_0; }
 		
-		//steps=Steps
-		public Assignment getStepsAssignment_1() { return cStepsAssignment_1; }
+		//comment=Comment?
+		public Assignment getCommentAssignment_2() { return cCommentAssignment_2; }
 		
-		//Steps
-		public RuleCall getStepsStepsParserRuleCall_1_0() { return cStepsStepsParserRuleCall_1_0; }
+		//Comment
+		public RuleCall getCommentCommentParserRuleCall_2_0() { return cCommentCommentParserRuleCall_2_0; }
 		
-		//expect=Expectations
-		public Assignment getExpectAssignment_2() { return cExpectAssignment_2; }
+		//components+=Component+
+		public Assignment getComponentsAssignment_3() { return cComponentsAssignment_3; }
+		
+		//Component
+		public RuleCall getComponentsComponentParserRuleCall_3_0() { return cComponentsComponentParserRuleCall_3_0; }
+		
+		//expect+=Expectations+
+		public Assignment getExpectAssignment_4() { return cExpectAssignment_4; }
 		
 		//Expectations
-		public RuleCall getExpectExpectationsParserRuleCall_2_0() { return cExpectExpectationsParserRuleCall_2_0; }
+		public RuleCall getExpectExpectationsParserRuleCall_4_0() { return cExpectExpectationsParserRuleCall_4_0; }
 	}
 	public class CaseNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.CaseName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNameOfTheTestCaseKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cNameOfTheTestCaseIsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//CaseName:
-		//	'Name of the test case' ':' name=ID;
+		//	'Name of the test case is ' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Name of the test case' ':' name=ID
+		//'Name of the test case is ' name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//'Name of the test case'
-		public Keyword getNameOfTheTestCaseKeyword_0() { return cNameOfTheTestCaseKeyword_0; }
-		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		//'Name of the test case is '
+		public Keyword getNameOfTheTestCaseIsKeyword_0() { return cNameOfTheTestCaseIsKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
-	}
-	public class StepsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.Steps");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cStepKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCommentAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCommentCommentParserRuleCall_1_0 = (RuleCall)cCommentAssignment_1.eContents().get(0);
-		private final Assignment cChangedTurnoutAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cChangedTurnoutTurnoutParserRuleCall_2_0 = (RuleCall)cChangedTurnoutAssignment_2.eContents().get(0);
-		private final Assignment cSectionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSectionSectionParserRuleCall_3_0 = (RuleCall)cSectionAssignment_3.eContents().get(0);
-		
-		//// May be any change about a turnout (except the id) or a section or a new lock.
-		//Steps:
-		//	'[Step]'
-		//	comment=Comment changedTurnout=Turnout?
-		//	section+=Section+;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'[Step]' comment=Comment changedTurnout=Turnout? section+=Section+
-		public Group getGroup() { return cGroup; }
-		
-		//'[Step]'
-		public Keyword getStepKeyword_0() { return cStepKeyword_0; }
-		
-		//comment=Comment
-		public Assignment getCommentAssignment_1() { return cCommentAssignment_1; }
-		
-		//Comment
-		public RuleCall getCommentCommentParserRuleCall_1_0() { return cCommentCommentParserRuleCall_1_0; }
-		
-		//changedTurnout=Turnout?
-		public Assignment getChangedTurnoutAssignment_2() { return cChangedTurnoutAssignment_2; }
-		
-		//Turnout
-		public RuleCall getChangedTurnoutTurnoutParserRuleCall_2_0() { return cChangedTurnoutTurnoutParserRuleCall_2_0; }
-		
-		//section+=Section+
-		public Assignment getSectionAssignment_3() { return cSectionAssignment_3; }
-		
-		//Section
-		public RuleCall getSectionSectionParserRuleCall_3_0() { return cSectionSectionParserRuleCall_3_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
 	public class CommentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.Comment");
@@ -229,37 +139,81 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getCommentSTRINGTerminalRuleCall_2_0() { return cCommentSTRINGTerminalRuleCall_2_0; }
 	}
+	public class ComponentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.Component");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cComponentKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTurnoutAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTurnoutTurnoutParserRuleCall_1_0 = (RuleCall)cTurnoutAssignment_1.eContents().get(0);
+		private final Assignment cSectionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSectionSectionParserRuleCall_2_0 = (RuleCall)cSectionAssignment_2.eContents().get(0);
+		
+		//Component:
+		//	'[Component]'
+		//	turnout=Turnout section=Section;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'[Component]' turnout=Turnout section=Section
+		public Group getGroup() { return cGroup; }
+		
+		//'[Component]'
+		public Keyword getComponentKeyword_0() { return cComponentKeyword_0; }
+		
+		//turnout=Turnout
+		public Assignment getTurnoutAssignment_1() { return cTurnoutAssignment_1; }
+		
+		//Turnout
+		public RuleCall getTurnoutTurnoutParserRuleCall_1_0() { return cTurnoutTurnoutParserRuleCall_1_0; }
+		
+		//section=Section
+		public Assignment getSectionAssignment_2() { return cSectionAssignment_2; }
+		
+		//Section
+		public RuleCall getSectionSectionParserRuleCall_2_0() { return cSectionSectionParserRuleCall_2_0; }
+	}
 	public class TurnoutElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.Turnout");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTurnoutStateIsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cTurnoutStateAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Alternatives cTurnoutStateAlternatives_1_0 = (Alternatives)cTurnoutStateAssignment_1.eContents().get(0);
-		private final Keyword cTurnoutStateSTRAIGHTKeyword_1_0_0 = (Keyword)cTurnoutStateAlternatives_1_0.eContents().get(0);
-		private final Keyword cTurnoutStateDIVERGENTKeyword_1_0_1 = (Keyword)cTurnoutStateAlternatives_1_0.eContents().get(1);
+		private final Keyword cTurnoutKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTurnoutIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTurnoutIDINTTerminalRuleCall_1_0 = (RuleCall)cTurnoutIDAssignment_1.eContents().get(0);
+		private final Keyword cIsKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTurnoutStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Alternatives cTurnoutStateAlternatives_3_0 = (Alternatives)cTurnoutStateAssignment_3.eContents().get(0);
+		private final Keyword cTurnoutStateSTRAIGHTKeyword_3_0_0 = (Keyword)cTurnoutStateAlternatives_3_0.eContents().get(0);
+		private final Keyword cTurnoutStateDIVERGENTKeyword_3_0_1 = (Keyword)cTurnoutStateAlternatives_3_0.eContents().get(1);
 		
 		//// A turnout has a state.
 		//Turnout:
-		//	'Turnout state is ' turnoutState=('STRAIGHT' | 'DIVERGENT');
+		//	'Turnout ' turnoutID=INT ' is ' turnoutState=('STRAIGHT' | 'DIVERGENT');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Turnout state is ' turnoutState=('STRAIGHT' | 'DIVERGENT')
+		//'Turnout ' turnoutID=INT ' is ' turnoutState=('STRAIGHT' | 'DIVERGENT')
 		public Group getGroup() { return cGroup; }
 		
-		//'Turnout state is '
-		public Keyword getTurnoutStateIsKeyword_0() { return cTurnoutStateIsKeyword_0; }
+		//'Turnout '
+		public Keyword getTurnoutKeyword_0() { return cTurnoutKeyword_0; }
+		
+		//turnoutID=INT
+		public Assignment getTurnoutIDAssignment_1() { return cTurnoutIDAssignment_1; }
+		
+		//INT
+		public RuleCall getTurnoutIDINTTerminalRuleCall_1_0() { return cTurnoutIDINTTerminalRuleCall_1_0; }
+		
+		//' is '
+		public Keyword getIsKeyword_2() { return cIsKeyword_2; }
 		
 		//turnoutState=('STRAIGHT' | 'DIVERGENT')
-		public Assignment getTurnoutStateAssignment_1() { return cTurnoutStateAssignment_1; }
+		public Assignment getTurnoutStateAssignment_3() { return cTurnoutStateAssignment_3; }
 		
 		//('STRAIGHT' | 'DIVERGENT')
-		public Alternatives getTurnoutStateAlternatives_1_0() { return cTurnoutStateAlternatives_1_0; }
+		public Alternatives getTurnoutStateAlternatives_3_0() { return cTurnoutStateAlternatives_3_0; }
 		
 		//'STRAIGHT'
-		public Keyword getTurnoutStateSTRAIGHTKeyword_1_0_0() { return cTurnoutStateSTRAIGHTKeyword_1_0_0; }
+		public Keyword getTurnoutStateSTRAIGHTKeyword_3_0_0() { return cTurnoutStateSTRAIGHTKeyword_3_0_0; }
 		
 		//'DIVERGENT'
-		public Keyword getTurnoutStateDIVERGENTKeyword_1_0_1() { return cTurnoutStateDIVERGENTKeyword_1_0_1; }
+		public Keyword getTurnoutStateDIVERGENTKeyword_3_0_1() { return cTurnoutStateDIVERGENTKeyword_3_0_1; }
 	}
 	public class SectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.Section");
@@ -273,10 +227,10 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// A section has a position where it connects to the turnout, and a state.
 		//Section:
-		//	straightSection=StraightSection DivergentSection=DivergentSection TopSection=TopSection;
+		//	straightSection=StraightSection divergentSection=DivergentSection topSection=TopSection;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//straightSection=StraightSection DivergentSection=DivergentSection TopSection=TopSection
+		//straightSection=StraightSection divergentSection=DivergentSection topSection=TopSection
 		public Group getGroup() { return cGroup; }
 		
 		//straightSection=StraightSection
@@ -285,13 +239,13 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//StraightSection
 		public RuleCall getStraightSectionStraightSectionParserRuleCall_0_0() { return cStraightSectionStraightSectionParserRuleCall_0_0; }
 		
-		//DivergentSection=DivergentSection
+		//divergentSection=DivergentSection
 		public Assignment getDivergentSectionAssignment_1() { return cDivergentSectionAssignment_1; }
 		
 		//DivergentSection
 		public RuleCall getDivergentSectionDivergentSectionParserRuleCall_1_0() { return cDivergentSectionDivergentSectionParserRuleCall_1_0; }
 		
-		//TopSection=TopSection
+		//topSection=TopSection
 		public Assignment getTopSectionAssignment_2() { return cTopSectionAssignment_2; }
 		
 		//TopSection
@@ -305,12 +259,17 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cStraightSectionStateAlternatives_1_0 = (Alternatives)cStraightSectionStateAssignment_1.eContents().get(0);
 		private final Keyword cStraightSectionStateFREEKeyword_1_0_0 = (Keyword)cStraightSectionStateAlternatives_1_0.eContents().get(0);
 		private final Keyword cStraightSectionStateOCCUPIEDKeyword_1_0_1 = (Keyword)cStraightSectionStateAlternatives_1_0.eContents().get(1);
+		private final Keyword cStraightIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cStrIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cStrIDINTTerminalRuleCall_4_0 = (RuleCall)cStrIDAssignment_4.eContents().get(0);
 		
 		//StraightSection:
-		//	'Section connecting from STRAIGHT is ' straightSectionState=('FREE' | 'OCCUPIED');
+		//	'Section connecting from STRAIGHT is ' straightSectionState=('FREE' | 'OCCUPIED')
+		//	'Straight id' ':' strID=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Section connecting from STRAIGHT is ' straightSectionState=('FREE' | 'OCCUPIED')
+		//'Section connecting from STRAIGHT is ' straightSectionState=('FREE' | 'OCCUPIED') 'Straight id' ':' strID=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'Section connecting from STRAIGHT is '
@@ -327,6 +286,18 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'OCCUPIED'
 		public Keyword getStraightSectionStateOCCUPIEDKeyword_1_0_1() { return cStraightSectionStateOCCUPIEDKeyword_1_0_1; }
+		
+		//'Straight id'
+		public Keyword getStraightIdKeyword_2() { return cStraightIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//strID=INT
+		public Assignment getStrIDAssignment_4() { return cStrIDAssignment_4; }
+		
+		//INT
+		public RuleCall getStrIDINTTerminalRuleCall_4_0() { return cStrIDINTTerminalRuleCall_4_0; }
 	}
 	public class DivergentSectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.DivergentSection");
@@ -336,12 +307,17 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cDivergentSectionStateAlternatives_1_0 = (Alternatives)cDivergentSectionStateAssignment_1.eContents().get(0);
 		private final Keyword cDivergentSectionStateFREEKeyword_1_0_0 = (Keyword)cDivergentSectionStateAlternatives_1_0.eContents().get(0);
 		private final Keyword cDivergentSectionStateOCCUPIEDKeyword_1_0_1 = (Keyword)cDivergentSectionStateAlternatives_1_0.eContents().get(1);
+		private final Keyword cDivergentIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDivIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDivIDINTTerminalRuleCall_4_0 = (RuleCall)cDivIDAssignment_4.eContents().get(0);
 		
 		//DivergentSection:
-		//	'Section connecting from DIVERGENT is ' divergentSectionState=('FREE' | 'OCCUPIED');
+		//	'Section connecting from DIVERGENT is ' divergentSectionState=('FREE' | 'OCCUPIED')
+		//	'Divergent id' ':' divID=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Section connecting from DIVERGENT is ' divergentSectionState=('FREE' | 'OCCUPIED')
+		//'Section connecting from DIVERGENT is ' divergentSectionState=('FREE' | 'OCCUPIED') 'Divergent id' ':' divID=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'Section connecting from DIVERGENT is '
@@ -358,6 +334,18 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'OCCUPIED'
 		public Keyword getDivergentSectionStateOCCUPIEDKeyword_1_0_1() { return cDivergentSectionStateOCCUPIEDKeyword_1_0_1; }
+		
+		//'Divergent id'
+		public Keyword getDivergentIdKeyword_2() { return cDivergentIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//divID=INT
+		public Assignment getDivIDAssignment_4() { return cDivIDAssignment_4; }
+		
+		//INT
+		public RuleCall getDivIDINTTerminalRuleCall_4_0() { return cDivIDINTTerminalRuleCall_4_0; }
 	}
 	public class TopSectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.TopSection");
@@ -367,12 +355,17 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cTopSectionStateAlternatives_1_0 = (Alternatives)cTopSectionStateAssignment_1.eContents().get(0);
 		private final Keyword cTopSectionStateFREEKeyword_1_0_0 = (Keyword)cTopSectionStateAlternatives_1_0.eContents().get(0);
 		private final Keyword cTopSectionStateOCCUPIEDKeyword_1_0_1 = (Keyword)cTopSectionStateAlternatives_1_0.eContents().get(1);
+		private final Keyword cTopIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTopIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTopIDINTTerminalRuleCall_4_0 = (RuleCall)cTopIDAssignment_4.eContents().get(0);
 		
 		//TopSection:
-		//	'Section connecting from TOP is ' topSectionState=('FREE' | 'OCCUPIED');
+		//	'Section connecting from TOP is ' topSectionState=('FREE' | 'OCCUPIED')
+		//	'Top id' ':' topID=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Section connecting from TOP is ' topSectionState=('FREE' | 'OCCUPIED')
+		//'Section connecting from TOP is ' topSectionState=('FREE' | 'OCCUPIED') 'Top id' ':' topID=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'Section connecting from TOP is '
@@ -389,48 +382,73 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'OCCUPIED'
 		public Keyword getTopSectionStateOCCUPIEDKeyword_1_0_1() { return cTopSectionStateOCCUPIEDKeyword_1_0_1; }
+		
+		//'Top id'
+		public Keyword getTopIdKeyword_2() { return cTopIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//topID=INT
+		public Assignment getTopIDAssignment_4() { return cTopIDAssignment_4; }
+		
+		//INT
+		public RuleCall getTopIDINTTerminalRuleCall_4_0() { return cTopIDINTTerminalRuleCall_4_0; }
 	}
 	public class ExpectationsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.Expectations");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cExpectedKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cStraightExpectationAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cStraightExpectationStraightExpectationParserRuleCall_1_0 = (RuleCall)cStraightExpectationAssignment_1.eContents().get(0);
-		private final Assignment cDivergentExpectationAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDivergentExpectationDivergentExpectationParserRuleCall_2_0 = (RuleCall)cDivergentExpectationAssignment_2.eContents().get(0);
-		private final Assignment cTopExpectationAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTopExpectationTopExpectationParserRuleCall_3_0 = (RuleCall)cTopExpectationAssignment_3.eContents().get(0);
+		private final Keyword cExpectedComponentsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTurnoutKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpectedTurnoutIDAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpectedTurnoutIDINTTerminalRuleCall_2_0 = (RuleCall)cExpectedTurnoutIDAssignment_2.eContents().get(0);
+		private final Assignment cStraightExpectationAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStraightExpectationStraightExpectationParserRuleCall_3_0 = (RuleCall)cStraightExpectationAssignment_3.eContents().get(0);
+		private final Assignment cDivergentExpectationAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDivergentExpectationDivergentExpectationParserRuleCall_4_0 = (RuleCall)cDivergentExpectationAssignment_4.eContents().get(0);
+		private final Assignment cTopExpectationAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTopExpectationTopExpectationParserRuleCall_5_0 = (RuleCall)cTopExpectationAssignment_5.eContents().get(0);
 		
 		//// Shows which sections are expected state of each section
 		//Expectations:
-		//	'[Expected]'
+		//	'[ExpectedComponents]'
+		//	'Turnout ' expectedTurnoutID=INT
 		//	straightExpectation=StraightExpectation divergentExpectation=DivergentExpectation topExpectation=TopExpectation;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'[Expected]' straightExpectation=StraightExpectation divergentExpectation=DivergentExpectation
-		//topExpectation=TopExpectation
+		//'[ExpectedComponents]' 'Turnout ' expectedTurnoutID=INT straightExpectation=StraightExpectation
+		//divergentExpectation=DivergentExpectation topExpectation=TopExpectation
 		public Group getGroup() { return cGroup; }
 		
-		//'[Expected]'
-		public Keyword getExpectedKeyword_0() { return cExpectedKeyword_0; }
+		//'[ExpectedComponents]'
+		public Keyword getExpectedComponentsKeyword_0() { return cExpectedComponentsKeyword_0; }
+		
+		//'Turnout '
+		public Keyword getTurnoutKeyword_1() { return cTurnoutKeyword_1; }
+		
+		//expectedTurnoutID=INT
+		public Assignment getExpectedTurnoutIDAssignment_2() { return cExpectedTurnoutIDAssignment_2; }
+		
+		//INT
+		public RuleCall getExpectedTurnoutIDINTTerminalRuleCall_2_0() { return cExpectedTurnoutIDINTTerminalRuleCall_2_0; }
 		
 		//straightExpectation=StraightExpectation
-		public Assignment getStraightExpectationAssignment_1() { return cStraightExpectationAssignment_1; }
+		public Assignment getStraightExpectationAssignment_3() { return cStraightExpectationAssignment_3; }
 		
 		//StraightExpectation
-		public RuleCall getStraightExpectationStraightExpectationParserRuleCall_1_0() { return cStraightExpectationStraightExpectationParserRuleCall_1_0; }
+		public RuleCall getStraightExpectationStraightExpectationParserRuleCall_3_0() { return cStraightExpectationStraightExpectationParserRuleCall_3_0; }
 		
 		//divergentExpectation=DivergentExpectation
-		public Assignment getDivergentExpectationAssignment_2() { return cDivergentExpectationAssignment_2; }
+		public Assignment getDivergentExpectationAssignment_4() { return cDivergentExpectationAssignment_4; }
 		
 		//DivergentExpectation
-		public RuleCall getDivergentExpectationDivergentExpectationParserRuleCall_2_0() { return cDivergentExpectationDivergentExpectationParserRuleCall_2_0; }
+		public RuleCall getDivergentExpectationDivergentExpectationParserRuleCall_4_0() { return cDivergentExpectationDivergentExpectationParserRuleCall_4_0; }
 		
 		//topExpectation=TopExpectation
-		public Assignment getTopExpectationAssignment_3() { return cTopExpectationAssignment_3; }
+		public Assignment getTopExpectationAssignment_5() { return cTopExpectationAssignment_5; }
 		
 		//TopExpectation
-		public RuleCall getTopExpectationTopExpectationParserRuleCall_3_0() { return cTopExpectationTopExpectationParserRuleCall_3_0; }
+		public RuleCall getTopExpectationTopExpectationParserRuleCall_5_0() { return cTopExpectationTopExpectationParserRuleCall_5_0; }
 	}
 	public class StraightExpectationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.StraightExpectation");
@@ -440,12 +458,18 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cStraightExpectedStateAlternatives_1_0 = (Alternatives)cStraightExpectedStateAssignment_1.eContents().get(0);
 		private final Keyword cStraightExpectedStateENABLEDKeyword_1_0_0 = (Keyword)cStraightExpectedStateAlternatives_1_0.eContents().get(0);
 		private final Keyword cStraightExpectedStateDISABLEDKeyword_1_0_1 = (Keyword)cStraightExpectedStateAlternatives_1_0.eContents().get(1);
+		private final Keyword cStraightIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cStrIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cStrIDINTTerminalRuleCall_4_0 = (RuleCall)cStrIDAssignment_4.eContents().get(0);
 		
 		//StraightExpectation:
-		//	'Section connecting from STRAIGHT is expected to be ' straightExpectedState=('ENABLED' | 'DISABLED');
+		//	'Section connecting from STRAIGHT is expected to be ' straightExpectedState=('ENABLED' | 'DISABLED')
+		//	'Straight id' ':' strID=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Section connecting from STRAIGHT is expected to be ' straightExpectedState=('ENABLED' | 'DISABLED')
+		//'Section connecting from STRAIGHT is expected to be ' straightExpectedState=('ENABLED' | 'DISABLED') 'Straight id' ':'
+		//strID=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'Section connecting from STRAIGHT is expected to be '
@@ -462,6 +486,18 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'DISABLED'
 		public Keyword getStraightExpectedStateDISABLEDKeyword_1_0_1() { return cStraightExpectedStateDISABLEDKeyword_1_0_1; }
+		
+		//'Straight id'
+		public Keyword getStraightIdKeyword_2() { return cStraightIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//strID=INT
+		public Assignment getStrIDAssignment_4() { return cStrIDAssignment_4; }
+		
+		//INT
+		public RuleCall getStrIDINTTerminalRuleCall_4_0() { return cStrIDINTTerminalRuleCall_4_0; }
 	}
 	public class DivergentExpectationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.DivergentExpectation");
@@ -471,12 +507,18 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cDivergentExpectedStateAlternatives_1_0 = (Alternatives)cDivergentExpectedStateAssignment_1.eContents().get(0);
 		private final Keyword cDivergentExpectedStateENABLEDKeyword_1_0_0 = (Keyword)cDivergentExpectedStateAlternatives_1_0.eContents().get(0);
 		private final Keyword cDivergentExpectedStateDISABLEDKeyword_1_0_1 = (Keyword)cDivergentExpectedStateAlternatives_1_0.eContents().get(1);
+		private final Keyword cDivergentIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDivIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDivIDINTTerminalRuleCall_4_0 = (RuleCall)cDivIDAssignment_4.eContents().get(0);
 		
 		//DivergentExpectation:
-		//	'Section connecting from DIVERGENT is expected to be ' divergentExpectedState=('ENABLED' | 'DISABLED');
+		//	'Section connecting from DIVERGENT is expected to be ' divergentExpectedState=('ENABLED' | 'DISABLED')
+		//	'Divergent id' ':' divID=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Section connecting from DIVERGENT is expected to be ' divergentExpectedState=('ENABLED' | 'DISABLED')
+		//'Section connecting from DIVERGENT is expected to be ' divergentExpectedState=('ENABLED' | 'DISABLED') 'Divergent id'
+		//':' divID=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'Section connecting from DIVERGENT is expected to be '
@@ -493,6 +535,18 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'DISABLED'
 		public Keyword getDivergentExpectedStateDISABLEDKeyword_1_0_1() { return cDivergentExpectedStateDISABLEDKeyword_1_0_1; }
+		
+		//'Divergent id'
+		public Keyword getDivergentIdKeyword_2() { return cDivergentIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//divID=INT
+		public Assignment getDivIDAssignment_4() { return cDivIDAssignment_4; }
+		
+		//INT
+		public RuleCall getDivIDINTTerminalRuleCall_4_0() { return cDivIDINTTerminalRuleCall_4_0; }
 	}
 	public class TopExpectationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.modes3.test.TestLanguage.TopExpectation");
@@ -502,12 +556,17 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cTopExpectedStateAlternatives_1_0 = (Alternatives)cTopExpectedStateAssignment_1.eContents().get(0);
 		private final Keyword cTopExpectedStateENABLEDKeyword_1_0_0 = (Keyword)cTopExpectedStateAlternatives_1_0.eContents().get(0);
 		private final Keyword cTopExpectedStateDISABLEDKeyword_1_0_1 = (Keyword)cTopExpectedStateAlternatives_1_0.eContents().get(1);
+		private final Keyword cTopIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTopIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTopIDINTTerminalRuleCall_4_0 = (RuleCall)cTopIDAssignment_4.eContents().get(0);
 		
 		//TopExpectation:
-		//	'Section connecting from TOP is expected to be ' topExpectedState=('ENABLED' | 'DISABLED');
+		//	'Section connecting from TOP is expected to be ' topExpectedState=('ENABLED' | 'DISABLED')
+		//	'Top id' ':' topID=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Section connecting from TOP is expected to be ' topExpectedState=('ENABLED' | 'DISABLED')
+		//'Section connecting from TOP is expected to be ' topExpectedState=('ENABLED' | 'DISABLED') 'Top id' ':' topID=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'Section connecting from TOP is expected to be '
@@ -524,15 +583,26 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'DISABLED'
 		public Keyword getTopExpectedStateDISABLEDKeyword_1_0_1() { return cTopExpectedStateDISABLEDKeyword_1_0_1; }
+		
+		//'Top id'
+		public Keyword getTopIdKeyword_2() { return cTopIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//topID=INT
+		public Assignment getTopIDAssignment_4() { return cTopIDAssignment_4; }
+		
+		//INT
+		public RuleCall getTopIDINTTerminalRuleCall_4_0() { return cTopIDINTTerminalRuleCall_4_0; }
 	}
 	
 	
 	private final ModelElements pModel;
-	private final InitialStateElements pInitialState;
 	private final CaseDescriptionElements pCaseDescription;
 	private final CaseNameElements pCaseName;
-	private final StepsElements pSteps;
 	private final CommentElements pComment;
+	private final ComponentElements pComponent;
 	private final TurnoutElements pTurnout;
 	private final SectionElements pSection;
 	private final StraightSectionElements pStraightSection;
@@ -553,11 +623,10 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pInitialState = new InitialStateElements();
 		this.pCaseDescription = new CaseDescriptionElements();
 		this.pCaseName = new CaseNameElements();
-		this.pSteps = new StepsElements();
 		this.pComment = new CommentElements();
+		this.pComponent = new ComponentElements();
 		this.pTurnout = new TurnoutElements();
 		this.pSection = new SectionElements();
 		this.pStraightSection = new StraightSectionElements();
@@ -597,7 +666,7 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	initialState=InitialState caseDescription+=CaseDescription* // At least one pair of steps and expectations. 
+	//	caseDescription+=CaseDescription* // At least one pair of steps and expectations. 
 	//;
 	public ModelElements getModelAccess() {
 		return pModel;
@@ -607,24 +676,12 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
-	//// The initial state.
-	//InitialState:
-	//	'[InitialState]'
-	//	'turnoutId' '=' turnoutID=INT // The id is given only in the initial state.
-	//	turnout=Turnout?;
-	public InitialStateElements getInitialStateAccess() {
-		return pInitialState;
-	}
-	
-	public ParserRule getInitialStateRule() {
-		return getInitialStateAccess().getRule();
-	}
-	
 	//// A pair of steps and expectations.
 	//CaseDescription:
-	//	caseName=CaseName
-	//	steps=Steps
-	//	expect=Expectations;
+	//	'[TestCase]'
+	//	caseName=CaseName comment=Comment?
+	//	components+=Component+
+	//	expect+=Expectations+;
 	public CaseDescriptionElements getCaseDescriptionAccess() {
 		return pCaseDescription;
 	}
@@ -634,26 +691,13 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CaseName:
-	//	'Name of the test case' ':' name=ID;
+	//	'Name of the test case is ' name=ID;
 	public CaseNameElements getCaseNameAccess() {
 		return pCaseName;
 	}
 	
 	public ParserRule getCaseNameRule() {
 		return getCaseNameAccess().getRule();
-	}
-	
-	//// May be any change about a turnout (except the id) or a section or a new lock.
-	//Steps:
-	//	'[Step]'
-	//	comment=Comment changedTurnout=Turnout?
-	//	section+=Section+;
-	public StepsElements getStepsAccess() {
-		return pSteps;
-	}
-	
-	public ParserRule getStepsRule() {
-		return getStepsAccess().getRule();
 	}
 	
 	//Comment:
@@ -666,9 +710,20 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getCommentAccess().getRule();
 	}
 	
+	//Component:
+	//	'[Component]'
+	//	turnout=Turnout section=Section;
+	public ComponentElements getComponentAccess() {
+		return pComponent;
+	}
+	
+	public ParserRule getComponentRule() {
+		return getComponentAccess().getRule();
+	}
+	
 	//// A turnout has a state.
 	//Turnout:
-	//	'Turnout state is ' turnoutState=('STRAIGHT' | 'DIVERGENT');
+	//	'Turnout ' turnoutID=INT ' is ' turnoutState=('STRAIGHT' | 'DIVERGENT');
 	public TurnoutElements getTurnoutAccess() {
 		return pTurnout;
 	}
@@ -679,7 +734,7 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//// A section has a position where it connects to the turnout, and a state.
 	//Section:
-	//	straightSection=StraightSection DivergentSection=DivergentSection TopSection=TopSection;
+	//	straightSection=StraightSection divergentSection=DivergentSection topSection=TopSection;
 	public SectionElements getSectionAccess() {
 		return pSection;
 	}
@@ -689,7 +744,8 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//StraightSection:
-	//	'Section connecting from STRAIGHT is ' straightSectionState=('FREE' | 'OCCUPIED');
+	//	'Section connecting from STRAIGHT is ' straightSectionState=('FREE' | 'OCCUPIED')
+	//	'Straight id' ':' strID=INT;
 	public StraightSectionElements getStraightSectionAccess() {
 		return pStraightSection;
 	}
@@ -699,7 +755,8 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//DivergentSection:
-	//	'Section connecting from DIVERGENT is ' divergentSectionState=('FREE' | 'OCCUPIED');
+	//	'Section connecting from DIVERGENT is ' divergentSectionState=('FREE' | 'OCCUPIED')
+	//	'Divergent id' ':' divID=INT;
 	public DivergentSectionElements getDivergentSectionAccess() {
 		return pDivergentSection;
 	}
@@ -709,7 +766,8 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TopSection:
-	//	'Section connecting from TOP is ' topSectionState=('FREE' | 'OCCUPIED');
+	//	'Section connecting from TOP is ' topSectionState=('FREE' | 'OCCUPIED')
+	//	'Top id' ':' topID=INT;
 	public TopSectionElements getTopSectionAccess() {
 		return pTopSection;
 	}
@@ -720,7 +778,8 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//// Shows which sections are expected state of each section
 	//Expectations:
-	//	'[Expected]'
+	//	'[ExpectedComponents]'
+	//	'Turnout ' expectedTurnoutID=INT
 	//	straightExpectation=StraightExpectation divergentExpectation=DivergentExpectation topExpectation=TopExpectation;
 	public ExpectationsElements getExpectationsAccess() {
 		return pExpectations;
@@ -731,7 +790,8 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//StraightExpectation:
-	//	'Section connecting from STRAIGHT is expected to be ' straightExpectedState=('ENABLED' | 'DISABLED');
+	//	'Section connecting from STRAIGHT is expected to be ' straightExpectedState=('ENABLED' | 'DISABLED')
+	//	'Straight id' ':' strID=INT;
 	public StraightExpectationElements getStraightExpectationAccess() {
 		return pStraightExpectation;
 	}
@@ -741,7 +801,8 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//DivergentExpectation:
-	//	'Section connecting from DIVERGENT is expected to be ' divergentExpectedState=('ENABLED' | 'DISABLED');
+	//	'Section connecting from DIVERGENT is expected to be ' divergentExpectedState=('ENABLED' | 'DISABLED')
+	//	'Divergent id' ':' divID=INT;
 	public DivergentExpectationElements getDivergentExpectationAccess() {
 		return pDivergentExpectation;
 	}
@@ -751,7 +812,8 @@ public class TestLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TopExpectation:
-	//	'Section connecting from TOP is expected to be ' topExpectedState=('ENABLED' | 'DISABLED');
+	//	'Section connecting from TOP is expected to be ' topExpectedState=('ENABLED' | 'DISABLED')
+	//	'Top id' ':' topID=INT;
 	public TopExpectationElements getTopExpectationAccess() {
 		return pTopExpectation;
 	}

@@ -3,6 +3,8 @@
  */
 package hu.bme.mit.modes3.test.testLanguage;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getCaseName <em>Case Name</em>}</li>
- *   <li>{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getSteps <em>Steps</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getComment <em>Comment</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getComponents <em>Components</em>}</li>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getExpect <em>Expect</em>}</li>
  * </ul>
  *
@@ -52,55 +55,61 @@ public interface CaseDescription extends EObject
   void setCaseName(CaseName value);
 
   /**
-   * Returns the value of the '<em><b>Steps</b></em>' containment reference.
+   * Returns the value of the '<em><b>Comment</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Steps</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Comment</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Steps</em>' containment reference.
-   * @see #setSteps(Steps)
-   * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getCaseDescription_Steps()
+   * @return the value of the '<em>Comment</em>' containment reference.
+   * @see #setComment(Comment)
+   * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getCaseDescription_Comment()
    * @model containment="true"
    * @generated
    */
-  Steps getSteps();
+  Comment getComment();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getSteps <em>Steps</em>}' containment reference.
+   * Sets the value of the '{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getComment <em>Comment</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Steps</em>' containment reference.
-   * @see #getSteps()
+   * @param value the new value of the '<em>Comment</em>' containment reference.
+   * @see #getComment()
    * @generated
    */
-  void setSteps(Steps value);
+  void setComment(Comment value);
 
   /**
-   * Returns the value of the '<em><b>Expect</b></em>' containment reference.
+   * Returns the value of the '<em><b>Components</b></em>' containment reference list.
+   * The list contents are of type {@link hu.bme.mit.modes3.test.testLanguage.Component}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expect</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Components</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expect</em>' containment reference.
-   * @see #setExpect(Expectations)
+   * @return the value of the '<em>Components</em>' containment reference list.
+   * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getCaseDescription_Components()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Component> getComponents();
+
+  /**
+   * Returns the value of the '<em><b>Expect</b></em>' containment reference list.
+   * The list contents are of type {@link hu.bme.mit.modes3.test.testLanguage.Expectations}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expect</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expect</em>' containment reference list.
    * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getCaseDescription_Expect()
    * @model containment="true"
    * @generated
    */
-  Expectations getExpect();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getExpect <em>Expect</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expect</em>' containment reference.
-   * @see #getExpect()
-   * @generated
-   */
-  void setExpect(Expectations value);
+  EList<Expectations> getExpect();
 
 } // CaseDescription

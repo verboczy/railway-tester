@@ -68,22 +68,13 @@ public interface TestLanguagePackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Initial State</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__INITIAL_STATE = 0;
-
-  /**
    * The feature id for the '<em><b>Case Description</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__CASE_DESCRIPTION = 1;
+  int MODEL__CASE_DESCRIPTION = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -92,44 +83,7 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.InitialStateImpl <em>Initial State</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.modes3.test.testLanguage.impl.InitialStateImpl
-   * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getInitialState()
-   * @generated
-   */
-  int INITIAL_STATE = 1;
-
-  /**
-   * The feature id for the '<em><b>Turnout ID</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INITIAL_STATE__TURNOUT_ID = 0;
-
-  /**
-   * The feature id for the '<em><b>Turnout</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INITIAL_STATE__TURNOUT = 1;
-
-  /**
-   * The number of structural features of the '<em>Initial State</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INITIAL_STATE_FEATURE_COUNT = 2;
+  int MODEL_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.CaseDescriptionImpl <em>Case Description</em>}' class.
@@ -139,7 +93,7 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getCaseDescription()
    * @generated
    */
-  int CASE_DESCRIPTION = 2;
+  int CASE_DESCRIPTION = 1;
 
   /**
    * The feature id for the '<em><b>Case Name</b></em>' containment reference.
@@ -151,22 +105,31 @@ public interface TestLanguagePackage extends EPackage
   int CASE_DESCRIPTION__CASE_NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Steps</b></em>' containment reference.
+   * The feature id for the '<em><b>Comment</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASE_DESCRIPTION__STEPS = 1;
+  int CASE_DESCRIPTION__COMMENT = 1;
 
   /**
-   * The feature id for the '<em><b>Expect</b></em>' containment reference.
+   * The feature id for the '<em><b>Components</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASE_DESCRIPTION__EXPECT = 2;
+  int CASE_DESCRIPTION__COMPONENTS = 2;
+
+  /**
+   * The feature id for the '<em><b>Expect</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_DESCRIPTION__EXPECT = 3;
 
   /**
    * The number of structural features of the '<em>Case Description</em>' class.
@@ -175,7 +138,7 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DESCRIPTION_FEATURE_COUNT = 3;
+  int CASE_DESCRIPTION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.CaseNameImpl <em>Case Name</em>}' class.
@@ -185,7 +148,7 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getCaseName()
    * @generated
    */
-  int CASE_NAME = 3;
+  int CASE_NAME = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -206,52 +169,6 @@ public interface TestLanguagePackage extends EPackage
   int CASE_NAME_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.StepsImpl <em>Steps</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.modes3.test.testLanguage.impl.StepsImpl
-   * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getSteps()
-   * @generated
-   */
-  int STEPS = 4;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STEPS__COMMENT = 0;
-
-  /**
-   * The feature id for the '<em><b>Changed Turnout</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STEPS__CHANGED_TURNOUT = 1;
-
-  /**
-   * The feature id for the '<em><b>Section</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STEPS__SECTION = 2;
-
-  /**
-   * The number of structural features of the '<em>Steps</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STEPS_FEATURE_COUNT = 3;
-
-  /**
    * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.CommentImpl <em>Comment</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -259,7 +176,7 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getComment()
    * @generated
    */
-  int COMMENT = 5;
+  int COMMENT = 3;
 
   /**
    * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -280,6 +197,43 @@ public interface TestLanguagePackage extends EPackage
   int COMMENT_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.ComponentImpl <em>Component</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.bme.mit.modes3.test.testLanguage.impl.ComponentImpl
+   * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getComponent()
+   * @generated
+   */
+  int COMPONENT = 4;
+
+  /**
+   * The feature id for the '<em><b>Turnout</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__TURNOUT = 0;
+
+  /**
+   * The feature id for the '<em><b>Section</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__SECTION = 1;
+
+  /**
+   * The number of structural features of the '<em>Component</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.TurnoutImpl <em>Turnout</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -287,7 +241,16 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getTurnout()
    * @generated
    */
-  int TURNOUT = 6;
+  int TURNOUT = 5;
+
+  /**
+   * The feature id for the '<em><b>Turnout ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TURNOUT__TURNOUT_ID = 0;
 
   /**
    * The feature id for the '<em><b>Turnout State</b></em>' attribute.
@@ -296,7 +259,7 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int TURNOUT__TURNOUT_STATE = 0;
+  int TURNOUT__TURNOUT_STATE = 1;
 
   /**
    * The number of structural features of the '<em>Turnout</em>' class.
@@ -305,7 +268,7 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int TURNOUT_FEATURE_COUNT = 1;
+  int TURNOUT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.SectionImpl <em>Section</em>}' class.
@@ -315,7 +278,7 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getSection()
    * @generated
    */
-  int SECTION = 7;
+  int SECTION = 6;
 
   /**
    * The feature id for the '<em><b>Straight Section</b></em>' containment reference.
@@ -361,7 +324,7 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getStraightSection()
    * @generated
    */
-  int STRAIGHT_SECTION = 8;
+  int STRAIGHT_SECTION = 7;
 
   /**
    * The feature id for the '<em><b>Straight Section State</b></em>' attribute.
@@ -373,13 +336,22 @@ public interface TestLanguagePackage extends EPackage
   int STRAIGHT_SECTION__STRAIGHT_SECTION_STATE = 0;
 
   /**
+   * The feature id for the '<em><b>Str ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRAIGHT_SECTION__STR_ID = 1;
+
+  /**
    * The number of structural features of the '<em>Straight Section</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRAIGHT_SECTION_FEATURE_COUNT = 1;
+  int STRAIGHT_SECTION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.DivergentSectionImpl <em>Divergent Section</em>}' class.
@@ -389,7 +361,7 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getDivergentSection()
    * @generated
    */
-  int DIVERGENT_SECTION = 9;
+  int DIVERGENT_SECTION = 8;
 
   /**
    * The feature id for the '<em><b>Divergent Section State</b></em>' attribute.
@@ -401,13 +373,22 @@ public interface TestLanguagePackage extends EPackage
   int DIVERGENT_SECTION__DIVERGENT_SECTION_STATE = 0;
 
   /**
+   * The feature id for the '<em><b>Div ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVERGENT_SECTION__DIV_ID = 1;
+
+  /**
    * The number of structural features of the '<em>Divergent Section</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIVERGENT_SECTION_FEATURE_COUNT = 1;
+  int DIVERGENT_SECTION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.TopSectionImpl <em>Top Section</em>}' class.
@@ -417,7 +398,7 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getTopSection()
    * @generated
    */
-  int TOP_SECTION = 10;
+  int TOP_SECTION = 9;
 
   /**
    * The feature id for the '<em><b>Top Section State</b></em>' attribute.
@@ -429,13 +410,22 @@ public interface TestLanguagePackage extends EPackage
   int TOP_SECTION__TOP_SECTION_STATE = 0;
 
   /**
+   * The feature id for the '<em><b>Top ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOP_SECTION__TOP_ID = 1;
+
+  /**
    * The number of structural features of the '<em>Top Section</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TOP_SECTION_FEATURE_COUNT = 1;
+  int TOP_SECTION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.ExpectationsImpl <em>Expectations</em>}' class.
@@ -445,7 +435,16 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getExpectations()
    * @generated
    */
-  int EXPECTATIONS = 11;
+  int EXPECTATIONS = 10;
+
+  /**
+   * The feature id for the '<em><b>Expected Turnout ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPECTATIONS__EXPECTED_TURNOUT_ID = 0;
 
   /**
    * The feature id for the '<em><b>Straight Expectation</b></em>' containment reference.
@@ -454,7 +453,7 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPECTATIONS__STRAIGHT_EXPECTATION = 0;
+  int EXPECTATIONS__STRAIGHT_EXPECTATION = 1;
 
   /**
    * The feature id for the '<em><b>Divergent Expectation</b></em>' containment reference.
@@ -463,7 +462,7 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPECTATIONS__DIVERGENT_EXPECTATION = 1;
+  int EXPECTATIONS__DIVERGENT_EXPECTATION = 2;
 
   /**
    * The feature id for the '<em><b>Top Expectation</b></em>' containment reference.
@@ -472,7 +471,7 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPECTATIONS__TOP_EXPECTATION = 2;
+  int EXPECTATIONS__TOP_EXPECTATION = 3;
 
   /**
    * The number of structural features of the '<em>Expectations</em>' class.
@@ -481,7 +480,7 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPECTATIONS_FEATURE_COUNT = 3;
+  int EXPECTATIONS_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.StraightExpectationImpl <em>Straight Expectation</em>}' class.
@@ -491,7 +490,7 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getStraightExpectation()
    * @generated
    */
-  int STRAIGHT_EXPECTATION = 12;
+  int STRAIGHT_EXPECTATION = 11;
 
   /**
    * The feature id for the '<em><b>Straight Expected State</b></em>' attribute.
@@ -503,13 +502,22 @@ public interface TestLanguagePackage extends EPackage
   int STRAIGHT_EXPECTATION__STRAIGHT_EXPECTED_STATE = 0;
 
   /**
+   * The feature id for the '<em><b>Str ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRAIGHT_EXPECTATION__STR_ID = 1;
+
+  /**
    * The number of structural features of the '<em>Straight Expectation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRAIGHT_EXPECTATION_FEATURE_COUNT = 1;
+  int STRAIGHT_EXPECTATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.DivergentExpectationImpl <em>Divergent Expectation</em>}' class.
@@ -519,7 +527,7 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getDivergentExpectation()
    * @generated
    */
-  int DIVERGENT_EXPECTATION = 13;
+  int DIVERGENT_EXPECTATION = 12;
 
   /**
    * The feature id for the '<em><b>Divergent Expected State</b></em>' attribute.
@@ -531,13 +539,22 @@ public interface TestLanguagePackage extends EPackage
   int DIVERGENT_EXPECTATION__DIVERGENT_EXPECTED_STATE = 0;
 
   /**
+   * The feature id for the '<em><b>Div ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVERGENT_EXPECTATION__DIV_ID = 1;
+
+  /**
    * The number of structural features of the '<em>Divergent Expectation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIVERGENT_EXPECTATION_FEATURE_COUNT = 1;
+  int DIVERGENT_EXPECTATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.TopExpectationImpl <em>Top Expectation</em>}' class.
@@ -547,7 +564,7 @@ public interface TestLanguagePackage extends EPackage
    * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getTopExpectation()
    * @generated
    */
-  int TOP_EXPECTATION = 14;
+  int TOP_EXPECTATION = 13;
 
   /**
    * The feature id for the '<em><b>Top Expected State</b></em>' attribute.
@@ -559,13 +576,22 @@ public interface TestLanguagePackage extends EPackage
   int TOP_EXPECTATION__TOP_EXPECTED_STATE = 0;
 
   /**
+   * The feature id for the '<em><b>Top ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOP_EXPECTATION__TOP_ID = 1;
+
+  /**
    * The number of structural features of the '<em>Top Expectation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TOP_EXPECTATION_FEATURE_COUNT = 1;
+  int TOP_EXPECTATION_FEATURE_COUNT = 2;
 
 
   /**
@@ -579,17 +605,6 @@ public interface TestLanguagePackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.modes3.test.testLanguage.Model#getInitialState <em>Initial State</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Initial State</em>'.
-   * @see hu.bme.mit.modes3.test.testLanguage.Model#getInitialState()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_InitialState();
-
-  /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.modes3.test.testLanguage.Model#getCaseDescription <em>Case Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -599,38 +614,6 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    */
   EReference getModel_CaseDescription();
-
-  /**
-   * Returns the meta object for class '{@link hu.bme.mit.modes3.test.testLanguage.InitialState <em>Initial State</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Initial State</em>'.
-   * @see hu.bme.mit.modes3.test.testLanguage.InitialState
-   * @generated
-   */
-  EClass getInitialState();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.modes3.test.testLanguage.InitialState#getTurnoutID <em>Turnout ID</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Turnout ID</em>'.
-   * @see hu.bme.mit.modes3.test.testLanguage.InitialState#getTurnoutID()
-   * @see #getInitialState()
-   * @generated
-   */
-  EAttribute getInitialState_TurnoutID();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.modes3.test.testLanguage.InitialState#getTurnout <em>Turnout</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Turnout</em>'.
-   * @see hu.bme.mit.modes3.test.testLanguage.InitialState#getTurnout()
-   * @see #getInitialState()
-   * @generated
-   */
-  EReference getInitialState_Turnout();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription <em>Case Description</em>}'.
@@ -654,21 +637,32 @@ public interface TestLanguagePackage extends EPackage
   EReference getCaseDescription_CaseName();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getSteps <em>Steps</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getComment <em>Comment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Steps</em>'.
-   * @see hu.bme.mit.modes3.test.testLanguage.CaseDescription#getSteps()
+   * @return the meta object for the containment reference '<em>Comment</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.CaseDescription#getComment()
    * @see #getCaseDescription()
    * @generated
    */
-  EReference getCaseDescription_Steps();
+  EReference getCaseDescription_Comment();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getExpect <em>Expect</em>}'.
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getComponents <em>Components</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expect</em>'.
+   * @return the meta object for the containment reference list '<em>Components</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.CaseDescription#getComponents()
+   * @see #getCaseDescription()
+   * @generated
+   */
+  EReference getCaseDescription_Components();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription#getExpect <em>Expect</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Expect</em>'.
    * @see hu.bme.mit.modes3.test.testLanguage.CaseDescription#getExpect()
    * @see #getCaseDescription()
    * @generated
@@ -697,49 +691,6 @@ public interface TestLanguagePackage extends EPackage
   EAttribute getCaseName_Name();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.modes3.test.testLanguage.Steps <em>Steps</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Steps</em>'.
-   * @see hu.bme.mit.modes3.test.testLanguage.Steps
-   * @generated
-   */
-  EClass getSteps();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.modes3.test.testLanguage.Steps#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comment</em>'.
-   * @see hu.bme.mit.modes3.test.testLanguage.Steps#getComment()
-   * @see #getSteps()
-   * @generated
-   */
-  EReference getSteps_Comment();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.bme.mit.modes3.test.testLanguage.Steps#getChangedTurnout <em>Changed Turnout</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Changed Turnout</em>'.
-   * @see hu.bme.mit.modes3.test.testLanguage.Steps#getChangedTurnout()
-   * @see #getSteps()
-   * @generated
-   */
-  EReference getSteps_ChangedTurnout();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link hu.bme.mit.modes3.test.testLanguage.Steps#getSection <em>Section</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Section</em>'.
-   * @see hu.bme.mit.modes3.test.testLanguage.Steps#getSection()
-   * @see #getSteps()
-   * @generated
-   */
-  EReference getSteps_Section();
-
-  /**
    * Returns the meta object for class '{@link hu.bme.mit.modes3.test.testLanguage.Comment <em>Comment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -761,6 +712,38 @@ public interface TestLanguagePackage extends EPackage
   EAttribute getComment_Comment();
 
   /**
+   * Returns the meta object for class '{@link hu.bme.mit.modes3.test.testLanguage.Component <em>Component</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.Component
+   * @generated
+   */
+  EClass getComponent();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.modes3.test.testLanguage.Component#getTurnout <em>Turnout</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Turnout</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.Component#getTurnout()
+   * @see #getComponent()
+   * @generated
+   */
+  EReference getComponent_Turnout();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.bme.mit.modes3.test.testLanguage.Component#getSection <em>Section</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Section</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.Component#getSection()
+   * @see #getComponent()
+   * @generated
+   */
+  EReference getComponent_Section();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.modes3.test.testLanguage.Turnout <em>Turnout</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -769,6 +752,17 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    */
   EClass getTurnout();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.modes3.test.testLanguage.Turnout#getTurnoutID <em>Turnout ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Turnout ID</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.Turnout#getTurnoutID()
+   * @see #getTurnout()
+   * @generated
+   */
+  EAttribute getTurnout_TurnoutID();
 
   /**
    * Returns the meta object for the attribute '{@link hu.bme.mit.modes3.test.testLanguage.Turnout#getTurnoutState <em>Turnout State</em>}'.
@@ -846,6 +840,17 @@ public interface TestLanguagePackage extends EPackage
   EAttribute getStraightSection_StraightSectionState();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.modes3.test.testLanguage.StraightSection#getStrID <em>Str ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Str ID</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.StraightSection#getStrID()
+   * @see #getStraightSection()
+   * @generated
+   */
+  EAttribute getStraightSection_StrID();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.modes3.test.testLanguage.DivergentSection <em>Divergent Section</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -865,6 +870,17 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    */
   EAttribute getDivergentSection_DivergentSectionState();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.modes3.test.testLanguage.DivergentSection#getDivID <em>Div ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Div ID</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.DivergentSection#getDivID()
+   * @see #getDivergentSection()
+   * @generated
+   */
+  EAttribute getDivergentSection_DivID();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.modes3.test.testLanguage.TopSection <em>Top Section</em>}'.
@@ -888,6 +904,17 @@ public interface TestLanguagePackage extends EPackage
   EAttribute getTopSection_TopSectionState();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.modes3.test.testLanguage.TopSection#getTopID <em>Top ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Top ID</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.TopSection#getTopID()
+   * @see #getTopSection()
+   * @generated
+   */
+  EAttribute getTopSection_TopID();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.modes3.test.testLanguage.Expectations <em>Expectations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -896,6 +923,17 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    */
   EClass getExpectations();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.modes3.test.testLanguage.Expectations#getExpectedTurnoutID <em>Expected Turnout ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Expected Turnout ID</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.Expectations#getExpectedTurnoutID()
+   * @see #getExpectations()
+   * @generated
+   */
+  EAttribute getExpectations_ExpectedTurnoutID();
 
   /**
    * Returns the meta object for the containment reference '{@link hu.bme.mit.modes3.test.testLanguage.Expectations#getStraightExpectation <em>Straight Expectation</em>}'.
@@ -952,6 +990,17 @@ public interface TestLanguagePackage extends EPackage
   EAttribute getStraightExpectation_StraightExpectedState();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.modes3.test.testLanguage.StraightExpectation#getStrID <em>Str ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Str ID</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.StraightExpectation#getStrID()
+   * @see #getStraightExpectation()
+   * @generated
+   */
+  EAttribute getStraightExpectation_StrID();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.modes3.test.testLanguage.DivergentExpectation <em>Divergent Expectation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -973,6 +1022,17 @@ public interface TestLanguagePackage extends EPackage
   EAttribute getDivergentExpectation_DivergentExpectedState();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.modes3.test.testLanguage.DivergentExpectation#getDivID <em>Div ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Div ID</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.DivergentExpectation#getDivID()
+   * @see #getDivergentExpectation()
+   * @generated
+   */
+  EAttribute getDivergentExpectation_DivID();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.modes3.test.testLanguage.TopExpectation <em>Top Expectation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -992,6 +1052,17 @@ public interface TestLanguagePackage extends EPackage
    * @generated
    */
   EAttribute getTopExpectation_TopExpectedState();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.modes3.test.testLanguage.TopExpectation#getTopID <em>Top ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Top ID</em>'.
+   * @see hu.bme.mit.modes3.test.testLanguage.TopExpectation#getTopID()
+   * @see #getTopExpectation()
+   * @generated
+   */
+  EAttribute getTopExpectation_TopID();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1027,46 +1098,12 @@ public interface TestLanguagePackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Initial State</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__INITIAL_STATE = eINSTANCE.getModel_InitialState();
-
-    /**
      * The meta object literal for the '<em><b>Case Description</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference MODEL__CASE_DESCRIPTION = eINSTANCE.getModel_CaseDescription();
-
-    /**
-     * The meta object literal for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.InitialStateImpl <em>Initial State</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.modes3.test.testLanguage.impl.InitialStateImpl
-     * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getInitialState()
-     * @generated
-     */
-    EClass INITIAL_STATE = eINSTANCE.getInitialState();
-
-    /**
-     * The meta object literal for the '<em><b>Turnout ID</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INITIAL_STATE__TURNOUT_ID = eINSTANCE.getInitialState_TurnoutID();
-
-    /**
-     * The meta object literal for the '<em><b>Turnout</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INITIAL_STATE__TURNOUT = eINSTANCE.getInitialState_Turnout();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.CaseDescriptionImpl <em>Case Description</em>}' class.
@@ -1087,15 +1124,23 @@ public interface TestLanguagePackage extends EPackage
     EReference CASE_DESCRIPTION__CASE_NAME = eINSTANCE.getCaseDescription_CaseName();
 
     /**
-     * The meta object literal for the '<em><b>Steps</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CASE_DESCRIPTION__STEPS = eINSTANCE.getCaseDescription_Steps();
+    EReference CASE_DESCRIPTION__COMMENT = eINSTANCE.getCaseDescription_Comment();
 
     /**
-     * The meta object literal for the '<em><b>Expect</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Components</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CASE_DESCRIPTION__COMPONENTS = eINSTANCE.getCaseDescription_Components();
+
+    /**
+     * The meta object literal for the '<em><b>Expect</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1121,40 +1166,6 @@ public interface TestLanguagePackage extends EPackage
     EAttribute CASE_NAME__NAME = eINSTANCE.getCaseName_Name();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.StepsImpl <em>Steps</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.modes3.test.testLanguage.impl.StepsImpl
-     * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getSteps()
-     * @generated
-     */
-    EClass STEPS = eINSTANCE.getSteps();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STEPS__COMMENT = eINSTANCE.getSteps_Comment();
-
-    /**
-     * The meta object literal for the '<em><b>Changed Turnout</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STEPS__CHANGED_TURNOUT = eINSTANCE.getSteps_ChangedTurnout();
-
-    /**
-     * The meta object literal for the '<em><b>Section</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STEPS__SECTION = eINSTANCE.getSteps_Section();
-
-    /**
      * The meta object literal for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.CommentImpl <em>Comment</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1173,6 +1184,32 @@ public interface TestLanguagePackage extends EPackage
     EAttribute COMMENT__COMMENT = eINSTANCE.getComment_Comment();
 
     /**
+     * The meta object literal for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.ComponentImpl <em>Component</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.bme.mit.modes3.test.testLanguage.impl.ComponentImpl
+     * @see hu.bme.mit.modes3.test.testLanguage.impl.TestLanguagePackageImpl#getComponent()
+     * @generated
+     */
+    EClass COMPONENT = eINSTANCE.getComponent();
+
+    /**
+     * The meta object literal for the '<em><b>Turnout</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT__TURNOUT = eINSTANCE.getComponent_Turnout();
+
+    /**
+     * The meta object literal for the '<em><b>Section</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT__SECTION = eINSTANCE.getComponent_Section();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.TurnoutImpl <em>Turnout</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1181,6 +1218,14 @@ public interface TestLanguagePackage extends EPackage
      * @generated
      */
     EClass TURNOUT = eINSTANCE.getTurnout();
+
+    /**
+     * The meta object literal for the '<em><b>Turnout ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TURNOUT__TURNOUT_ID = eINSTANCE.getTurnout_TurnoutID();
 
     /**
      * The meta object literal for the '<em><b>Turnout State</b></em>' attribute feature.
@@ -1243,6 +1288,14 @@ public interface TestLanguagePackage extends EPackage
     EAttribute STRAIGHT_SECTION__STRAIGHT_SECTION_STATE = eINSTANCE.getStraightSection_StraightSectionState();
 
     /**
+     * The meta object literal for the '<em><b>Str ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRAIGHT_SECTION__STR_ID = eINSTANCE.getStraightSection_StrID();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.DivergentSectionImpl <em>Divergent Section</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1259,6 +1312,14 @@ public interface TestLanguagePackage extends EPackage
      * @generated
      */
     EAttribute DIVERGENT_SECTION__DIVERGENT_SECTION_STATE = eINSTANCE.getDivergentSection_DivergentSectionState();
+
+    /**
+     * The meta object literal for the '<em><b>Div ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIVERGENT_SECTION__DIV_ID = eINSTANCE.getDivergentSection_DivID();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.TopSectionImpl <em>Top Section</em>}' class.
@@ -1279,6 +1340,14 @@ public interface TestLanguagePackage extends EPackage
     EAttribute TOP_SECTION__TOP_SECTION_STATE = eINSTANCE.getTopSection_TopSectionState();
 
     /**
+     * The meta object literal for the '<em><b>Top ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TOP_SECTION__TOP_ID = eINSTANCE.getTopSection_TopID();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.ExpectationsImpl <em>Expectations</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1287,6 +1356,14 @@ public interface TestLanguagePackage extends EPackage
      * @generated
      */
     EClass EXPECTATIONS = eINSTANCE.getExpectations();
+
+    /**
+     * The meta object literal for the '<em><b>Expected Turnout ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPECTATIONS__EXPECTED_TURNOUT_ID = eINSTANCE.getExpectations_ExpectedTurnoutID();
 
     /**
      * The meta object literal for the '<em><b>Straight Expectation</b></em>' containment reference feature.
@@ -1331,6 +1408,14 @@ public interface TestLanguagePackage extends EPackage
     EAttribute STRAIGHT_EXPECTATION__STRAIGHT_EXPECTED_STATE = eINSTANCE.getStraightExpectation_StraightExpectedState();
 
     /**
+     * The meta object literal for the '<em><b>Str ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRAIGHT_EXPECTATION__STR_ID = eINSTANCE.getStraightExpectation_StrID();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.DivergentExpectationImpl <em>Divergent Expectation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1349,6 +1434,14 @@ public interface TestLanguagePackage extends EPackage
     EAttribute DIVERGENT_EXPECTATION__DIVERGENT_EXPECTED_STATE = eINSTANCE.getDivergentExpectation_DivergentExpectedState();
 
     /**
+     * The meta object literal for the '<em><b>Div ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIVERGENT_EXPECTATION__DIV_ID = eINSTANCE.getDivergentExpectation_DivID();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.modes3.test.testLanguage.impl.TopExpectationImpl <em>Top Expectation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1365,6 +1458,14 @@ public interface TestLanguagePackage extends EPackage
      * @generated
      */
     EAttribute TOP_EXPECTATION__TOP_EXPECTED_STATE = eINSTANCE.getTopExpectation_TopExpectedState();
+
+    /**
+     * The meta object literal for the '<em><b>Top ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TOP_EXPECTATION__TOP_ID = eINSTANCE.getTopExpectation_TopID();
 
   }
 

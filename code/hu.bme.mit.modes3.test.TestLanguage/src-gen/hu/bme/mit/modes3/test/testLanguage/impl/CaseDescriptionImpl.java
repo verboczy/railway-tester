@@ -5,18 +5,26 @@ package hu.bme.mit.modes3.test.testLanguage.impl;
 
 import hu.bme.mit.modes3.test.testLanguage.CaseDescription;
 import hu.bme.mit.modes3.test.testLanguage.CaseName;
+import hu.bme.mit.modes3.test.testLanguage.Comment;
+import hu.bme.mit.modes3.test.testLanguage.Component;
 import hu.bme.mit.modes3.test.testLanguage.Expectations;
-import hu.bme.mit.modes3.test.testLanguage.Steps;
 import hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +35,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.CaseDescriptionImpl#getCaseName <em>Case Name</em>}</li>
- *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.CaseDescriptionImpl#getSteps <em>Steps</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.CaseDescriptionImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.CaseDescriptionImpl#getComponents <em>Components</em>}</li>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.CaseDescriptionImpl#getExpect <em>Expect</em>}</li>
  * </ul>
  *
@@ -46,24 +55,34 @@ public class CaseDescriptionImpl extends MinimalEObjectImpl.Container implements
   protected CaseName caseName;
 
   /**
-   * The cached value of the '{@link #getSteps() <em>Steps</em>}' containment reference.
+   * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSteps()
+   * @see #getComment()
    * @generated
    * @ordered
    */
-  protected Steps steps;
+  protected Comment comment;
 
   /**
-   * The cached value of the '{@link #getExpect() <em>Expect</em>}' containment reference.
+   * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComponents()
+   * @generated
+   * @ordered
+   */
+  protected EList<Component> components;
+
+  /**
+   * The cached value of the '{@link #getExpect() <em>Expect</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getExpect()
    * @generated
    * @ordered
    */
-  protected Expectations expect;
+  protected EList<Expectations> expect;
 
   /**
    * <!-- begin-user-doc -->
@@ -139,9 +158,9 @@ public class CaseDescriptionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public Steps getSteps()
+  public Comment getComment()
   {
-    return steps;
+    return comment;
   }
 
   /**
@@ -149,13 +168,13 @@ public class CaseDescriptionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSteps(Steps newSteps, NotificationChain msgs)
+  public NotificationChain basicSetComment(Comment newComment, NotificationChain msgs)
   {
-    Steps oldSteps = steps;
-    steps = newSteps;
+    Comment oldComment = comment;
+    comment = newComment;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TestLanguagePackage.CASE_DESCRIPTION__STEPS, oldSteps, newSteps);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TestLanguagePackage.CASE_DESCRIPTION__COMMENT, oldComment, newComment);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -166,20 +185,20 @@ public class CaseDescriptionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSteps(Steps newSteps)
+  public void setComment(Comment newComment)
   {
-    if (newSteps != steps)
+    if (newComment != comment)
     {
       NotificationChain msgs = null;
-      if (steps != null)
-        msgs = ((InternalEObject)steps).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TestLanguagePackage.CASE_DESCRIPTION__STEPS, null, msgs);
-      if (newSteps != null)
-        msgs = ((InternalEObject)newSteps).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TestLanguagePackage.CASE_DESCRIPTION__STEPS, null, msgs);
-      msgs = basicSetSteps(newSteps, msgs);
+      if (comment != null)
+        msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TestLanguagePackage.CASE_DESCRIPTION__COMMENT, null, msgs);
+      if (newComment != null)
+        msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TestLanguagePackage.CASE_DESCRIPTION__COMMENT, null, msgs);
+      msgs = basicSetComment(newComment, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.CASE_DESCRIPTION__STEPS, newSteps, newSteps));
+      eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.CASE_DESCRIPTION__COMMENT, newComment, newComment));
   }
 
   /**
@@ -187,47 +206,27 @@ public class CaseDescriptionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expectations getExpect()
+  public EList<Component> getComponents()
   {
+    if (components == null)
+    {
+      components = new EObjectContainmentEList<Component>(Component.class, this, TestLanguagePackage.CASE_DESCRIPTION__COMPONENTS);
+    }
+    return components;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Expectations> getExpect()
+  {
+    if (expect == null)
+    {
+      expect = new EObjectContainmentEList<Expectations>(Expectations.class, this, TestLanguagePackage.CASE_DESCRIPTION__EXPECT);
+    }
     return expect;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExpect(Expectations newExpect, NotificationChain msgs)
-  {
-    Expectations oldExpect = expect;
-    expect = newExpect;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TestLanguagePackage.CASE_DESCRIPTION__EXPECT, oldExpect, newExpect);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setExpect(Expectations newExpect)
-  {
-    if (newExpect != expect)
-    {
-      NotificationChain msgs = null;
-      if (expect != null)
-        msgs = ((InternalEObject)expect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TestLanguagePackage.CASE_DESCRIPTION__EXPECT, null, msgs);
-      if (newExpect != null)
-        msgs = ((InternalEObject)newExpect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TestLanguagePackage.CASE_DESCRIPTION__EXPECT, null, msgs);
-      msgs = basicSetExpect(newExpect, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.CASE_DESCRIPTION__EXPECT, newExpect, newExpect));
   }
 
   /**
@@ -242,10 +241,12 @@ public class CaseDescriptionImpl extends MinimalEObjectImpl.Container implements
     {
       case TestLanguagePackage.CASE_DESCRIPTION__CASE_NAME:
         return basicSetCaseName(null, msgs);
-      case TestLanguagePackage.CASE_DESCRIPTION__STEPS:
-        return basicSetSteps(null, msgs);
+      case TestLanguagePackage.CASE_DESCRIPTION__COMMENT:
+        return basicSetComment(null, msgs);
+      case TestLanguagePackage.CASE_DESCRIPTION__COMPONENTS:
+        return ((InternalEList<?>)getComponents()).basicRemove(otherEnd, msgs);
       case TestLanguagePackage.CASE_DESCRIPTION__EXPECT:
-        return basicSetExpect(null, msgs);
+        return ((InternalEList<?>)getExpect()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -262,8 +263,10 @@ public class CaseDescriptionImpl extends MinimalEObjectImpl.Container implements
     {
       case TestLanguagePackage.CASE_DESCRIPTION__CASE_NAME:
         return getCaseName();
-      case TestLanguagePackage.CASE_DESCRIPTION__STEPS:
-        return getSteps();
+      case TestLanguagePackage.CASE_DESCRIPTION__COMMENT:
+        return getComment();
+      case TestLanguagePackage.CASE_DESCRIPTION__COMPONENTS:
+        return getComponents();
       case TestLanguagePackage.CASE_DESCRIPTION__EXPECT:
         return getExpect();
     }
@@ -275,6 +278,7 @@ public class CaseDescriptionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -283,11 +287,16 @@ public class CaseDescriptionImpl extends MinimalEObjectImpl.Container implements
       case TestLanguagePackage.CASE_DESCRIPTION__CASE_NAME:
         setCaseName((CaseName)newValue);
         return;
-      case TestLanguagePackage.CASE_DESCRIPTION__STEPS:
-        setSteps((Steps)newValue);
+      case TestLanguagePackage.CASE_DESCRIPTION__COMMENT:
+        setComment((Comment)newValue);
+        return;
+      case TestLanguagePackage.CASE_DESCRIPTION__COMPONENTS:
+        getComponents().clear();
+        getComponents().addAll((Collection<? extends Component>)newValue);
         return;
       case TestLanguagePackage.CASE_DESCRIPTION__EXPECT:
-        setExpect((Expectations)newValue);
+        getExpect().clear();
+        getExpect().addAll((Collection<? extends Expectations>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -306,11 +315,14 @@ public class CaseDescriptionImpl extends MinimalEObjectImpl.Container implements
       case TestLanguagePackage.CASE_DESCRIPTION__CASE_NAME:
         setCaseName((CaseName)null);
         return;
-      case TestLanguagePackage.CASE_DESCRIPTION__STEPS:
-        setSteps((Steps)null);
+      case TestLanguagePackage.CASE_DESCRIPTION__COMMENT:
+        setComment((Comment)null);
+        return;
+      case TestLanguagePackage.CASE_DESCRIPTION__COMPONENTS:
+        getComponents().clear();
         return;
       case TestLanguagePackage.CASE_DESCRIPTION__EXPECT:
-        setExpect((Expectations)null);
+        getExpect().clear();
         return;
     }
     super.eUnset(featureID);
@@ -328,10 +340,12 @@ public class CaseDescriptionImpl extends MinimalEObjectImpl.Container implements
     {
       case TestLanguagePackage.CASE_DESCRIPTION__CASE_NAME:
         return caseName != null;
-      case TestLanguagePackage.CASE_DESCRIPTION__STEPS:
-        return steps != null;
+      case TestLanguagePackage.CASE_DESCRIPTION__COMMENT:
+        return comment != null;
+      case TestLanguagePackage.CASE_DESCRIPTION__COMPONENTS:
+        return components != null && !components.isEmpty();
       case TestLanguagePackage.CASE_DESCRIPTION__EXPECT:
-        return expect != null;
+        return expect != null && !expect.isEmpty();
     }
     return super.eIsSet(featureID);
   }

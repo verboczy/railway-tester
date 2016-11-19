@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.StraightSectionImpl#getStraightSectionState <em>Straight Section State</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.StraightSectionImpl#getStrID <em>Str ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +48,26 @@ public class StraightSectionImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected String straightSectionState = STRAIGHT_SECTION_STATE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getStrID() <em>Str ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStrID()
+   * @generated
+   * @ordered
+   */
+  protected static final int STR_ID_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getStrID() <em>Str ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStrID()
+   * @generated
+   * @ordered
+   */
+  protected int strID = STR_ID_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,6 +118,29 @@ public class StraightSectionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getStrID()
+  {
+    return strID;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStrID(int newStrID)
+  {
+    int oldStrID = strID;
+    strID = newStrID;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.STRAIGHT_SECTION__STR_ID, oldStrID, strID));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -104,6 +148,8 @@ public class StraightSectionImpl extends MinimalEObjectImpl.Container implements
     {
       case TestLanguagePackage.STRAIGHT_SECTION__STRAIGHT_SECTION_STATE:
         return getStraightSectionState();
+      case TestLanguagePackage.STRAIGHT_SECTION__STR_ID:
+        return getStrID();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,6 +166,9 @@ public class StraightSectionImpl extends MinimalEObjectImpl.Container implements
     {
       case TestLanguagePackage.STRAIGHT_SECTION__STRAIGHT_SECTION_STATE:
         setStraightSectionState((String)newValue);
+        return;
+      case TestLanguagePackage.STRAIGHT_SECTION__STR_ID:
+        setStrID((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,6 +187,9 @@ public class StraightSectionImpl extends MinimalEObjectImpl.Container implements
       case TestLanguagePackage.STRAIGHT_SECTION__STRAIGHT_SECTION_STATE:
         setStraightSectionState(STRAIGHT_SECTION_STATE_EDEFAULT);
         return;
+      case TestLanguagePackage.STRAIGHT_SECTION__STR_ID:
+        setStrID(STR_ID_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -154,6 +206,8 @@ public class StraightSectionImpl extends MinimalEObjectImpl.Container implements
     {
       case TestLanguagePackage.STRAIGHT_SECTION__STRAIGHT_SECTION_STATE:
         return STRAIGHT_SECTION_STATE_EDEFAULT == null ? straightSectionState != null : !STRAIGHT_SECTION_STATE_EDEFAULT.equals(straightSectionState);
+      case TestLanguagePackage.STRAIGHT_SECTION__STR_ID:
+        return strID != STR_ID_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -171,6 +225,8 @@ public class StraightSectionImpl extends MinimalEObjectImpl.Container implements
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (straightSectionState: ");
     result.append(straightSectionState);
+    result.append(", strID: ");
+    result.append(strID);
     result.append(')');
     return result.toString();
   }

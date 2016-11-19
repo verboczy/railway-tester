@@ -66,11 +66,10 @@ public class TestLanguageFactoryImpl extends EFactoryImpl implements TestLanguag
     switch (eClass.getClassifierID())
     {
       case TestLanguagePackage.MODEL: return createModel();
-      case TestLanguagePackage.INITIAL_STATE: return createInitialState();
       case TestLanguagePackage.CASE_DESCRIPTION: return createCaseDescription();
       case TestLanguagePackage.CASE_NAME: return createCaseName();
-      case TestLanguagePackage.STEPS: return createSteps();
       case TestLanguagePackage.COMMENT: return createComment();
+      case TestLanguagePackage.COMPONENT: return createComponent();
       case TestLanguagePackage.TURNOUT: return createTurnout();
       case TestLanguagePackage.SECTION: return createSection();
       case TestLanguagePackage.STRAIGHT_SECTION: return createStraightSection();
@@ -101,17 +100,6 @@ public class TestLanguageFactoryImpl extends EFactoryImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  public InitialState createInitialState()
-  {
-    InitialStateImpl initialState = new InitialStateImpl();
-    return initialState;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public CaseDescription createCaseDescription()
   {
     CaseDescriptionImpl caseDescription = new CaseDescriptionImpl();
@@ -134,10 +122,10 @@ public class TestLanguageFactoryImpl extends EFactoryImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  public Steps createSteps()
+  public Comment createComment()
   {
-    StepsImpl steps = new StepsImpl();
-    return steps;
+    CommentImpl comment = new CommentImpl();
+    return comment;
   }
 
   /**
@@ -145,10 +133,10 @@ public class TestLanguageFactoryImpl extends EFactoryImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  public Comment createComment()
+  public Component createComponent()
   {
-    CommentImpl comment = new CommentImpl();
-    return comment;
+    ComponentImpl component = new ComponentImpl();
+    return component;
   }
 
   /**

@@ -81,11 +81,6 @@ public class TestLanguageAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseInitialState(InitialState object)
-      {
-        return createInitialStateAdapter();
-      }
-      @Override
       public Adapter caseCaseDescription(CaseDescription object)
       {
         return createCaseDescriptionAdapter();
@@ -96,14 +91,14 @@ public class TestLanguageAdapterFactory extends AdapterFactoryImpl
         return createCaseNameAdapter();
       }
       @Override
-      public Adapter caseSteps(Steps object)
-      {
-        return createStepsAdapter();
-      }
-      @Override
       public Adapter caseComment(Comment object)
       {
         return createCommentAdapter();
+      }
+      @Override
+      public Adapter caseComponent(Component object)
+      {
+        return createComponentAdapter();
       }
       @Override
       public Adapter caseTurnout(Turnout object)
@@ -188,21 +183,6 @@ public class TestLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.modes3.test.testLanguage.InitialState <em>Initial State</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.modes3.test.testLanguage.InitialState
-   * @generated
-   */
-  public Adapter createInitialStateAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link hu.bme.mit.modes3.test.testLanguage.CaseDescription <em>Case Description</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -233,21 +213,6 @@ public class TestLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.modes3.test.testLanguage.Steps <em>Steps</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.modes3.test.testLanguage.Steps
-   * @generated
-   */
-  public Adapter createStepsAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link hu.bme.mit.modes3.test.testLanguage.Comment <em>Comment</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -258,6 +223,21 @@ public class TestLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCommentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.modes3.test.testLanguage.Component <em>Component</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.bme.mit.modes3.test.testLanguage.Component
+   * @generated
+   */
+  public Adapter createComponentAdapter()
   {
     return null;
   }

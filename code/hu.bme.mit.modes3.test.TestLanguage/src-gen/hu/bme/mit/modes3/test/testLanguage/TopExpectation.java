@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.TopExpectation#getTopExpectedState <em>Top Expected State</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.TopExpectation#getTopID <em>Top ID</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getTopExpectation()
@@ -48,5 +49,31 @@ public interface TopExpectation extends EObject
    * @generated
    */
   void setTopExpectedState(String value);
+
+  /**
+   * Returns the value of the '<em><b>Top ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Top ID</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Top ID</em>' attribute.
+   * @see #setTopID(int)
+   * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getTopExpectation_TopID()
+   * @model
+   * @generated
+   */
+  int getTopID();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.modes3.test.testLanguage.TopExpectation#getTopID <em>Top ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Top ID</em>' attribute.
+   * @see #getTopID()
+   * @generated
+   */
+  void setTopID(int value);
 
 } // TopExpectation

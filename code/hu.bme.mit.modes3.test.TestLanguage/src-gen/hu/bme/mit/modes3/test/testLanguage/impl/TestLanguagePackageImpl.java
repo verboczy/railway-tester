@@ -6,13 +6,12 @@ package hu.bme.mit.modes3.test.testLanguage.impl;
 import hu.bme.mit.modes3.test.testLanguage.CaseDescription;
 import hu.bme.mit.modes3.test.testLanguage.CaseName;
 import hu.bme.mit.modes3.test.testLanguage.Comment;
+import hu.bme.mit.modes3.test.testLanguage.Component;
 import hu.bme.mit.modes3.test.testLanguage.DivergentExpectation;
 import hu.bme.mit.modes3.test.testLanguage.DivergentSection;
 import hu.bme.mit.modes3.test.testLanguage.Expectations;
-import hu.bme.mit.modes3.test.testLanguage.InitialState;
 import hu.bme.mit.modes3.test.testLanguage.Model;
 import hu.bme.mit.modes3.test.testLanguage.Section;
-import hu.bme.mit.modes3.test.testLanguage.Steps;
 import hu.bme.mit.modes3.test.testLanguage.StraightExpectation;
 import hu.bme.mit.modes3.test.testLanguage.StraightSection;
 import hu.bme.mit.modes3.test.testLanguage.TestLanguageFactory;
@@ -48,13 +47,6 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass initialStateEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass caseDescriptionEClass = null;
 
   /**
@@ -69,14 +61,14 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass stepsEClass = null;
+  private EClass commentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass commentEClass = null;
+  private EClass componentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -219,49 +211,9 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_InitialState()
-  {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getModel_CaseDescription()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getInitialState()
-  {
-    return initialStateEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getInitialState_TurnoutID()
-  {
-    return (EAttribute)initialStateEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getInitialState_Turnout()
-  {
-    return (EReference)initialStateEClass.getEStructuralFeatures().get(1);
+    return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -289,7 +241,7 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaseDescription_Steps()
+  public EReference getCaseDescription_Comment()
   {
     return (EReference)caseDescriptionEClass.getEStructuralFeatures().get(1);
   }
@@ -299,9 +251,19 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaseDescription_Expect()
+  public EReference getCaseDescription_Components()
   {
     return (EReference)caseDescriptionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCaseDescription_Expect()
+  {
+    return (EReference)caseDescriptionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -329,46 +291,6 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSteps()
-  {
-    return stepsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSteps_Comment()
-  {
-    return (EReference)stepsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSteps_ChangedTurnout()
-  {
-    return (EReference)stepsEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSteps_Section()
-  {
-    return (EReference)stepsEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getComment()
   {
     return commentEClass;
@@ -389,6 +311,36 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getComponent()
+  {
+    return componentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponent_Turnout()
+  {
+    return (EReference)componentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponent_Section()
+  {
+    return (EReference)componentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getTurnout()
   {
     return turnoutEClass;
@@ -399,9 +351,19 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTurnout_TurnoutState()
+  public EAttribute getTurnout_TurnoutID()
   {
     return (EAttribute)turnoutEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTurnout_TurnoutState()
+  {
+    return (EAttribute)turnoutEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -469,6 +431,16 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getStraightSection_StrID()
+  {
+    return (EAttribute)straightSectionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDivergentSection()
   {
     return divergentSectionEClass;
@@ -482,6 +454,16 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
   public EAttribute getDivergentSection_DivergentSectionState()
   {
     return (EAttribute)divergentSectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDivergentSection_DivID()
+  {
+    return (EAttribute)divergentSectionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -509,6 +491,16 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getTopSection_TopID()
+  {
+    return (EAttribute)topSectionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getExpectations()
   {
     return expectationsEClass;
@@ -519,9 +511,9 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpectations_StraightExpectation()
+  public EAttribute getExpectations_ExpectedTurnoutID()
   {
-    return (EReference)expectationsEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)expectationsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -529,7 +521,7 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpectations_DivergentExpectation()
+  public EReference getExpectations_StraightExpectation()
   {
     return (EReference)expectationsEClass.getEStructuralFeatures().get(1);
   }
@@ -539,9 +531,19 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpectations_TopExpectation()
+  public EReference getExpectations_DivergentExpectation()
   {
     return (EReference)expectationsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpectations_TopExpectation()
+  {
+    return (EReference)expectationsEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -569,6 +571,16 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getStraightExpectation_StrID()
+  {
+    return (EAttribute)straightExpectationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDivergentExpectation()
   {
     return divergentExpectationEClass;
@@ -589,6 +601,16 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getDivergentExpectation_DivID()
+  {
+    return (EAttribute)divergentExpectationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getTopExpectation()
   {
     return topExpectationEClass;
@@ -602,6 +624,16 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
   public EAttribute getTopExpectation_TopExpectedState()
   {
     return (EAttribute)topExpectationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTopExpectation_TopID()
+  {
+    return (EAttribute)topExpectationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -635,30 +667,26 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__INITIAL_STATE);
     createEReference(modelEClass, MODEL__CASE_DESCRIPTION);
-
-    initialStateEClass = createEClass(INITIAL_STATE);
-    createEAttribute(initialStateEClass, INITIAL_STATE__TURNOUT_ID);
-    createEReference(initialStateEClass, INITIAL_STATE__TURNOUT);
 
     caseDescriptionEClass = createEClass(CASE_DESCRIPTION);
     createEReference(caseDescriptionEClass, CASE_DESCRIPTION__CASE_NAME);
-    createEReference(caseDescriptionEClass, CASE_DESCRIPTION__STEPS);
+    createEReference(caseDescriptionEClass, CASE_DESCRIPTION__COMMENT);
+    createEReference(caseDescriptionEClass, CASE_DESCRIPTION__COMPONENTS);
     createEReference(caseDescriptionEClass, CASE_DESCRIPTION__EXPECT);
 
     caseNameEClass = createEClass(CASE_NAME);
     createEAttribute(caseNameEClass, CASE_NAME__NAME);
 
-    stepsEClass = createEClass(STEPS);
-    createEReference(stepsEClass, STEPS__COMMENT);
-    createEReference(stepsEClass, STEPS__CHANGED_TURNOUT);
-    createEReference(stepsEClass, STEPS__SECTION);
-
     commentEClass = createEClass(COMMENT);
     createEAttribute(commentEClass, COMMENT__COMMENT);
 
+    componentEClass = createEClass(COMPONENT);
+    createEReference(componentEClass, COMPONENT__TURNOUT);
+    createEReference(componentEClass, COMPONENT__SECTION);
+
     turnoutEClass = createEClass(TURNOUT);
+    createEAttribute(turnoutEClass, TURNOUT__TURNOUT_ID);
     createEAttribute(turnoutEClass, TURNOUT__TURNOUT_STATE);
 
     sectionEClass = createEClass(SECTION);
@@ -668,26 +696,33 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
 
     straightSectionEClass = createEClass(STRAIGHT_SECTION);
     createEAttribute(straightSectionEClass, STRAIGHT_SECTION__STRAIGHT_SECTION_STATE);
+    createEAttribute(straightSectionEClass, STRAIGHT_SECTION__STR_ID);
 
     divergentSectionEClass = createEClass(DIVERGENT_SECTION);
     createEAttribute(divergentSectionEClass, DIVERGENT_SECTION__DIVERGENT_SECTION_STATE);
+    createEAttribute(divergentSectionEClass, DIVERGENT_SECTION__DIV_ID);
 
     topSectionEClass = createEClass(TOP_SECTION);
     createEAttribute(topSectionEClass, TOP_SECTION__TOP_SECTION_STATE);
+    createEAttribute(topSectionEClass, TOP_SECTION__TOP_ID);
 
     expectationsEClass = createEClass(EXPECTATIONS);
+    createEAttribute(expectationsEClass, EXPECTATIONS__EXPECTED_TURNOUT_ID);
     createEReference(expectationsEClass, EXPECTATIONS__STRAIGHT_EXPECTATION);
     createEReference(expectationsEClass, EXPECTATIONS__DIVERGENT_EXPECTATION);
     createEReference(expectationsEClass, EXPECTATIONS__TOP_EXPECTATION);
 
     straightExpectationEClass = createEClass(STRAIGHT_EXPECTATION);
     createEAttribute(straightExpectationEClass, STRAIGHT_EXPECTATION__STRAIGHT_EXPECTED_STATE);
+    createEAttribute(straightExpectationEClass, STRAIGHT_EXPECTATION__STR_ID);
 
     divergentExpectationEClass = createEClass(DIVERGENT_EXPECTATION);
     createEAttribute(divergentExpectationEClass, DIVERGENT_EXPECTATION__DIVERGENT_EXPECTED_STATE);
+    createEAttribute(divergentExpectationEClass, DIVERGENT_EXPECTATION__DIV_ID);
 
     topExpectationEClass = createEClass(TOP_EXPECTATION);
     createEAttribute(topExpectationEClass, TOP_EXPECTATION__TOP_EXPECTED_STATE);
+    createEAttribute(topExpectationEClass, TOP_EXPECTATION__TOP_ID);
   }
 
   /**
@@ -722,59 +757,62 @@ public class TestLanguagePackageImpl extends EPackageImpl implements TestLanguag
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_InitialState(), this.getInitialState(), null, "initialState", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_CaseDescription(), this.getCaseDescription(), null, "caseDescription", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(initialStateEClass, InitialState.class, "InitialState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInitialState_TurnoutID(), ecorePackage.getEInt(), "turnoutID", null, 0, 1, InitialState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInitialState_Turnout(), this.getTurnout(), null, "turnout", null, 0, 1, InitialState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(caseDescriptionEClass, CaseDescription.class, "CaseDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCaseDescription_CaseName(), this.getCaseName(), null, "caseName", null, 0, 1, CaseDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCaseDescription_Steps(), this.getSteps(), null, "steps", null, 0, 1, CaseDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCaseDescription_Expect(), this.getExpectations(), null, "expect", null, 0, 1, CaseDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCaseDescription_Comment(), this.getComment(), null, "comment", null, 0, 1, CaseDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCaseDescription_Components(), this.getComponent(), null, "components", null, 0, -1, CaseDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCaseDescription_Expect(), this.getExpectations(), null, "expect", null, 0, -1, CaseDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(caseNameEClass, CaseName.class, "CaseName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCaseName_Name(), ecorePackage.getEString(), "name", null, 0, 1, CaseName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(stepsEClass, Steps.class, "Steps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSteps_Comment(), this.getComment(), null, "comment", null, 0, 1, Steps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSteps_ChangedTurnout(), this.getTurnout(), null, "changedTurnout", null, 0, 1, Steps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSteps_Section(), this.getSection(), null, "section", null, 0, -1, Steps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComment_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComponent_Turnout(), this.getTurnout(), null, "turnout", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponent_Section(), this.getSection(), null, "section", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(turnoutEClass, Turnout.class, "Turnout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTurnout_TurnoutID(), ecorePackage.getEInt(), "turnoutID", null, 0, 1, Turnout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTurnout_TurnoutState(), ecorePackage.getEString(), "turnoutState", null, 0, 1, Turnout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSection_StraightSection(), this.getStraightSection(), null, "straightSection", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSection_DivergentSection(), this.getDivergentSection(), null, "DivergentSection", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSection_TopSection(), this.getTopSection(), null, "TopSection", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSection_DivergentSection(), this.getDivergentSection(), null, "divergentSection", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSection_TopSection(), this.getTopSection(), null, "topSection", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(straightSectionEClass, StraightSection.class, "StraightSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStraightSection_StraightSectionState(), ecorePackage.getEString(), "straightSectionState", null, 0, 1, StraightSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStraightSection_StrID(), ecorePackage.getEInt(), "strID", null, 0, 1, StraightSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(divergentSectionEClass, DivergentSection.class, "DivergentSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDivergentSection_DivergentSectionState(), ecorePackage.getEString(), "divergentSectionState", null, 0, 1, DivergentSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDivergentSection_DivID(), ecorePackage.getEInt(), "divID", null, 0, 1, DivergentSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(topSectionEClass, TopSection.class, "TopSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTopSection_TopSectionState(), ecorePackage.getEString(), "topSectionState", null, 0, 1, TopSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTopSection_TopID(), ecorePackage.getEInt(), "topID", null, 0, 1, TopSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expectationsEClass, Expectations.class, "Expectations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExpectations_ExpectedTurnoutID(), ecorePackage.getEInt(), "expectedTurnoutID", null, 0, 1, Expectations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpectations_StraightExpectation(), this.getStraightExpectation(), null, "straightExpectation", null, 0, 1, Expectations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpectations_DivergentExpectation(), this.getDivergentExpectation(), null, "divergentExpectation", null, 0, 1, Expectations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpectations_TopExpectation(), this.getTopExpectation(), null, "topExpectation", null, 0, 1, Expectations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(straightExpectationEClass, StraightExpectation.class, "StraightExpectation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStraightExpectation_StraightExpectedState(), ecorePackage.getEString(), "straightExpectedState", null, 0, 1, StraightExpectation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStraightExpectation_StrID(), ecorePackage.getEInt(), "strID", null, 0, 1, StraightExpectation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(divergentExpectationEClass, DivergentExpectation.class, "DivergentExpectation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDivergentExpectation_DivergentExpectedState(), ecorePackage.getEString(), "divergentExpectedState", null, 0, 1, DivergentExpectation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDivergentExpectation_DivID(), ecorePackage.getEInt(), "divID", null, 0, 1, DivergentExpectation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(topExpectationEClass, TopExpectation.class, "TopExpectation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTopExpectation_TopExpectedState(), ecorePackage.getEString(), "topExpectedState", null, 0, 1, TopExpectation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTopExpectation_TopID(), ecorePackage.getEInt(), "topID", null, 0, 1, TopExpectation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

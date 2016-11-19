@@ -33,15 +33,6 @@ public interface TestLanguageFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Initial State</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Initial State</em>'.
-   * @generated
-   */
-  InitialState createInitialState();
-
-  /**
    * Returns a new object of class '<em>Case Description</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -60,15 +51,6 @@ public interface TestLanguageFactory extends EFactory
   CaseName createCaseName();
 
   /**
-   * Returns a new object of class '<em>Steps</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Steps</em>'.
-   * @generated
-   */
-  Steps createSteps();
-
-  /**
    * Returns a new object of class '<em>Comment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,6 +58,15 @@ public interface TestLanguageFactory extends EFactory
    * @generated
    */
   Comment createComment();
+
+  /**
+   * Returns a new object of class '<em>Component</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component</em>'.
+   * @generated
+   */
+  Component createComponent();
 
   /**
    * Returns a new object of class '<em>Turnout</em>'.

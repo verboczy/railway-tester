@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.Turnout#getTurnoutID <em>Turnout ID</em>}</li>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.Turnout#getTurnoutState <em>Turnout State</em>}</li>
  * </ul>
  *
@@ -23,6 +24,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Turnout extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Turnout ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Turnout ID</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Turnout ID</em>' attribute.
+   * @see #setTurnoutID(int)
+   * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getTurnout_TurnoutID()
+   * @model
+   * @generated
+   */
+  int getTurnoutID();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.modes3.test.testLanguage.Turnout#getTurnoutID <em>Turnout ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Turnout ID</em>' attribute.
+   * @see #getTurnoutID()
+   * @generated
+   */
+  void setTurnoutID(int value);
+
   /**
    * Returns the value of the '<em><b>Turnout State</b></em>' attribute.
    * <!-- begin-user-doc -->

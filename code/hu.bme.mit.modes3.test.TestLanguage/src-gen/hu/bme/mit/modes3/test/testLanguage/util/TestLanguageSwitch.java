@@ -80,13 +80,6 @@ public class TestLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TestLanguagePackage.INITIAL_STATE:
-      {
-        InitialState initialState = (InitialState)theEObject;
-        T result = caseInitialState(initialState);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case TestLanguagePackage.CASE_DESCRIPTION:
       {
         CaseDescription caseDescription = (CaseDescription)theEObject;
@@ -101,17 +94,17 @@ public class TestLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TestLanguagePackage.STEPS:
-      {
-        Steps steps = (Steps)theEObject;
-        T result = caseSteps(steps);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case TestLanguagePackage.COMMENT:
       {
         Comment comment = (Comment)theEObject;
         T result = caseComment(comment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TestLanguagePackage.COMPONENT:
+      {
+        Component component = (Component)theEObject;
+        T result = caseComponent(component);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -199,22 +192,6 @@ public class TestLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Initial State</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Initial State</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInitialState(InitialState object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Case Description</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -247,22 +224,6 @@ public class TestLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Steps</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Steps</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSteps(Steps object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -274,6 +235,22 @@ public class TestLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComment(Comment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponent(Component object)
   {
     return null;
   }

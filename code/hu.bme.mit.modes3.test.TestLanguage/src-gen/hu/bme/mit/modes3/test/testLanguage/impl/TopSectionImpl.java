@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.TopSectionImpl#getTopSectionState <em>Top Section State</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.TopSectionImpl#getTopID <em>Top ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +48,26 @@ public class TopSectionImpl extends MinimalEObjectImpl.Container implements TopS
    * @ordered
    */
   protected String topSectionState = TOP_SECTION_STATE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getTopID() <em>Top ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTopID()
+   * @generated
+   * @ordered
+   */
+  protected static final int TOP_ID_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getTopID() <em>Top ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTopID()
+   * @generated
+   * @ordered
+   */
+  protected int topID = TOP_ID_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,6 +118,29 @@ public class TopSectionImpl extends MinimalEObjectImpl.Container implements TopS
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getTopID()
+  {
+    return topID;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTopID(int newTopID)
+  {
+    int oldTopID = topID;
+    topID = newTopID;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.TOP_SECTION__TOP_ID, oldTopID, topID));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -104,6 +148,8 @@ public class TopSectionImpl extends MinimalEObjectImpl.Container implements TopS
     {
       case TestLanguagePackage.TOP_SECTION__TOP_SECTION_STATE:
         return getTopSectionState();
+      case TestLanguagePackage.TOP_SECTION__TOP_ID:
+        return getTopID();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,6 +166,9 @@ public class TopSectionImpl extends MinimalEObjectImpl.Container implements TopS
     {
       case TestLanguagePackage.TOP_SECTION__TOP_SECTION_STATE:
         setTopSectionState((String)newValue);
+        return;
+      case TestLanguagePackage.TOP_SECTION__TOP_ID:
+        setTopID((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,6 +187,9 @@ public class TopSectionImpl extends MinimalEObjectImpl.Container implements TopS
       case TestLanguagePackage.TOP_SECTION__TOP_SECTION_STATE:
         setTopSectionState(TOP_SECTION_STATE_EDEFAULT);
         return;
+      case TestLanguagePackage.TOP_SECTION__TOP_ID:
+        setTopID(TOP_ID_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -154,6 +206,8 @@ public class TopSectionImpl extends MinimalEObjectImpl.Container implements TopS
     {
       case TestLanguagePackage.TOP_SECTION__TOP_SECTION_STATE:
         return TOP_SECTION_STATE_EDEFAULT == null ? topSectionState != null : !TOP_SECTION_STATE_EDEFAULT.equals(topSectionState);
+      case TestLanguagePackage.TOP_SECTION__TOP_ID:
+        return topID != TOP_ID_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -171,6 +225,8 @@ public class TopSectionImpl extends MinimalEObjectImpl.Container implements TopS
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (topSectionState: ");
     result.append(topSectionState);
+    result.append(", topID: ");
+    result.append(topID);
     result.append(')');
     return result.toString();
   }

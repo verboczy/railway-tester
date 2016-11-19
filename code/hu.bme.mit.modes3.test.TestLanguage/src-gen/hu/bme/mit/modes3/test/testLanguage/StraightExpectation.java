@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.StraightExpectation#getStraightExpectedState <em>Straight Expected State</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.StraightExpectation#getStrID <em>Str ID</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getStraightExpectation()
@@ -48,5 +49,31 @@ public interface StraightExpectation extends EObject
    * @generated
    */
   void setStraightExpectedState(String value);
+
+  /**
+   * Returns the value of the '<em><b>Str ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Str ID</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Str ID</em>' attribute.
+   * @see #setStrID(int)
+   * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getStraightExpectation_StrID()
+   * @model
+   * @generated
+   */
+  int getStrID();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.modes3.test.testLanguage.StraightExpectation#getStrID <em>Str ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Str ID</em>' attribute.
+   * @see #getStrID()
+   * @generated
+   */
+  void setStrID(int value);
 
 } // StraightExpectation

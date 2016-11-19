@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.DivergentExpectationImpl#getDivergentExpectedState <em>Divergent Expected State</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.DivergentExpectationImpl#getDivID <em>Div ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +48,26 @@ public class DivergentExpectationImpl extends MinimalEObjectImpl.Container imple
    * @ordered
    */
   protected String divergentExpectedState = DIVERGENT_EXPECTED_STATE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDivID() <em>Div ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDivID()
+   * @generated
+   * @ordered
+   */
+  protected static final int DIV_ID_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getDivID() <em>Div ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDivID()
+   * @generated
+   * @ordered
+   */
+  protected int divID = DIV_ID_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,6 +118,29 @@ public class DivergentExpectationImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getDivID()
+  {
+    return divID;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDivID(int newDivID)
+  {
+    int oldDivID = divID;
+    divID = newDivID;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.DIVERGENT_EXPECTATION__DIV_ID, oldDivID, divID));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -104,6 +148,8 @@ public class DivergentExpectationImpl extends MinimalEObjectImpl.Container imple
     {
       case TestLanguagePackage.DIVERGENT_EXPECTATION__DIVERGENT_EXPECTED_STATE:
         return getDivergentExpectedState();
+      case TestLanguagePackage.DIVERGENT_EXPECTATION__DIV_ID:
+        return getDivID();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,6 +166,9 @@ public class DivergentExpectationImpl extends MinimalEObjectImpl.Container imple
     {
       case TestLanguagePackage.DIVERGENT_EXPECTATION__DIVERGENT_EXPECTED_STATE:
         setDivergentExpectedState((String)newValue);
+        return;
+      case TestLanguagePackage.DIVERGENT_EXPECTATION__DIV_ID:
+        setDivID((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,6 +187,9 @@ public class DivergentExpectationImpl extends MinimalEObjectImpl.Container imple
       case TestLanguagePackage.DIVERGENT_EXPECTATION__DIVERGENT_EXPECTED_STATE:
         setDivergentExpectedState(DIVERGENT_EXPECTED_STATE_EDEFAULT);
         return;
+      case TestLanguagePackage.DIVERGENT_EXPECTATION__DIV_ID:
+        setDivID(DIV_ID_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -154,6 +206,8 @@ public class DivergentExpectationImpl extends MinimalEObjectImpl.Container imple
     {
       case TestLanguagePackage.DIVERGENT_EXPECTATION__DIVERGENT_EXPECTED_STATE:
         return DIVERGENT_EXPECTED_STATE_EDEFAULT == null ? divergentExpectedState != null : !DIVERGENT_EXPECTED_STATE_EDEFAULT.equals(divergentExpectedState);
+      case TestLanguagePackage.DIVERGENT_EXPECTATION__DIV_ID:
+        return divID != DIV_ID_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -171,6 +225,8 @@ public class DivergentExpectationImpl extends MinimalEObjectImpl.Container imple
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (divergentExpectedState: ");
     result.append(divergentExpectedState);
+    result.append(", divID: ");
+    result.append(divID);
     result.append(')');
     return result.toString();
   }

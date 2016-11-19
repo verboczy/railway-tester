@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.TopSection#getTopSectionState <em>Top Section State</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.TopSection#getTopID <em>Top ID</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getTopSection()
@@ -48,5 +49,31 @@ public interface TopSection extends EObject
    * @generated
    */
   void setTopSectionState(String value);
+
+  /**
+   * Returns the value of the '<em><b>Top ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Top ID</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Top ID</em>' attribute.
+   * @see #setTopID(int)
+   * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getTopSection_TopID()
+   * @model
+   * @generated
+   */
+  int getTopID();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.modes3.test.testLanguage.TopSection#getTopID <em>Top ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Top ID</em>' attribute.
+   * @see #getTopID()
+   * @generated
+   */
+  void setTopID(int value);
 
 } // TopSection

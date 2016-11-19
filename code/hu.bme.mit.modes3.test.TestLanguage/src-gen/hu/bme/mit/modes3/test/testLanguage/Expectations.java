@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.Expectations#getExpectedTurnoutID <em>Expected Turnout ID</em>}</li>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.Expectations#getStraightExpectation <em>Straight Expectation</em>}</li>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.Expectations#getDivergentExpectation <em>Divergent Expectation</em>}</li>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.Expectations#getTopExpectation <em>Top Expectation</em>}</li>
@@ -25,6 +26,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Expectations extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Expected Turnout ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expected Turnout ID</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expected Turnout ID</em>' attribute.
+   * @see #setExpectedTurnoutID(int)
+   * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getExpectations_ExpectedTurnoutID()
+   * @model
+   * @generated
+   */
+  int getExpectedTurnoutID();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.modes3.test.testLanguage.Expectations#getExpectedTurnoutID <em>Expected Turnout ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expected Turnout ID</em>' attribute.
+   * @see #getExpectedTurnoutID()
+   * @generated
+   */
+  void setExpectedTurnoutID(int value);
+
   /**
    * Returns the value of the '<em><b>Straight Expectation</b></em>' containment reference.
    * <!-- begin-user-doc -->

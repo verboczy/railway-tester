@@ -7,59 +7,62 @@
   <genPackages prefix="TestLanguage" basePackage="hu.bme.mit.modes3.test" disposableProviderFactory="true"
       fileExtensions="testdsl" ecorePackage="TestLanguage.ecore#/">
     <genClasses ecoreClass="TestLanguage.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Model/initialState"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Model/caseDescription"/>
-    </genClasses>
-    <genClasses ecoreClass="TestLanguage.ecore#//InitialState">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//InitialState/turnoutID"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//InitialState/turnout"/>
     </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//CaseDescription">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//CaseDescription/caseName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//CaseDescription/steps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//CaseDescription/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//CaseDescription/components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//CaseDescription/expect"/>
     </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//CaseName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//CaseName/name"/>
     </genClasses>
-    <genClasses ecoreClass="TestLanguage.ecore#//Steps">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Steps/comment"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Steps/changedTurnout"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Steps/section"/>
-    </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//Comment/comment"/>
     </genClasses>
+    <genClasses ecoreClass="TestLanguage.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Component/turnout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Component/section"/>
+    </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//Turnout">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//Turnout/turnoutID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//Turnout/turnoutState"/>
     </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//Section">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Section/straightSection"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Section/DivergentSection"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Section/TopSection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Section/divergentSection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Section/topSection"/>
     </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//StraightSection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//StraightSection/straightSectionState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//StraightSection/strID"/>
     </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//DivergentSection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//DivergentSection/divergentSectionState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//DivergentSection/divID"/>
     </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//TopSection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//TopSection/topSectionState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//TopSection/topID"/>
     </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//Expectations">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//Expectations/expectedTurnoutID"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Expectations/straightExpectation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Expectations/divergentExpectation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestLanguage.ecore#//Expectations/topExpectation"/>
     </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//StraightExpectation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//StraightExpectation/straightExpectedState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//StraightExpectation/strID"/>
     </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//DivergentExpectation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//DivergentExpectation/divergentExpectedState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//DivergentExpectation/divID"/>
     </genClasses>
     <genClasses ecoreClass="TestLanguage.ecore#//TopExpectation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//TopExpectation/topExpectedState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestLanguage.ecore#//TopExpectation/topID"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

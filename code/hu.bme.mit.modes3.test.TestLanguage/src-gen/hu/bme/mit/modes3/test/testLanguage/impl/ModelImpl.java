@@ -4,13 +4,11 @@
 package hu.bme.mit.modes3.test.testLanguage.impl;
 
 import hu.bme.mit.modes3.test.testLanguage.CaseDescription;
-import hu.bme.mit.modes3.test.testLanguage.InitialState;
 import hu.bme.mit.modes3.test.testLanguage.Model;
 import hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,7 +29,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.ModelImpl#getInitialState <em>Initial State</em>}</li>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.ModelImpl#getCaseDescription <em>Case Description</em>}</li>
  * </ul>
  *
@@ -40,16 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
-  /**
-   * The cached value of the '{@link #getInitialState() <em>Initial State</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInitialState()
-   * @generated
-   * @ordered
-   */
-  protected InitialState initialState;
-
   /**
    * The cached value of the '{@link #getCaseDescription() <em>Case Description</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -86,54 +72,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public InitialState getInitialState()
-  {
-    return initialState;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetInitialState(InitialState newInitialState, NotificationChain msgs)
-  {
-    InitialState oldInitialState = initialState;
-    initialState = newInitialState;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TestLanguagePackage.MODEL__INITIAL_STATE, oldInitialState, newInitialState);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setInitialState(InitialState newInitialState)
-  {
-    if (newInitialState != initialState)
-    {
-      NotificationChain msgs = null;
-      if (initialState != null)
-        msgs = ((InternalEObject)initialState).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TestLanguagePackage.MODEL__INITIAL_STATE, null, msgs);
-      if (newInitialState != null)
-        msgs = ((InternalEObject)newInitialState).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TestLanguagePackage.MODEL__INITIAL_STATE, null, msgs);
-      msgs = basicSetInitialState(newInitialState, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.MODEL__INITIAL_STATE, newInitialState, newInitialState));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<CaseDescription> getCaseDescription()
   {
     if (caseDescription == null)
@@ -153,8 +91,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case TestLanguagePackage.MODEL__INITIAL_STATE:
-        return basicSetInitialState(null, msgs);
       case TestLanguagePackage.MODEL__CASE_DESCRIPTION:
         return ((InternalEList<?>)getCaseDescription()).basicRemove(otherEnd, msgs);
     }
@@ -171,8 +107,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case TestLanguagePackage.MODEL__INITIAL_STATE:
-        return getInitialState();
       case TestLanguagePackage.MODEL__CASE_DESCRIPTION:
         return getCaseDescription();
     }
@@ -190,9 +124,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case TestLanguagePackage.MODEL__INITIAL_STATE:
-        setInitialState((InitialState)newValue);
-        return;
       case TestLanguagePackage.MODEL__CASE_DESCRIPTION:
         getCaseDescription().clear();
         getCaseDescription().addAll((Collection<? extends CaseDescription>)newValue);
@@ -211,9 +142,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case TestLanguagePackage.MODEL__INITIAL_STATE:
-        setInitialState((InitialState)null);
-        return;
       case TestLanguagePackage.MODEL__CASE_DESCRIPTION:
         getCaseDescription().clear();
         return;
@@ -231,8 +159,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case TestLanguagePackage.MODEL__INITIAL_STATE:
-        return initialState != null;
       case TestLanguagePackage.MODEL__CASE_DESCRIPTION:
         return caseDescription != null && !caseDescription.isEmpty();
     }

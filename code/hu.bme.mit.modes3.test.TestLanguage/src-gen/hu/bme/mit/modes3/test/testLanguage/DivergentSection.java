@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.DivergentSection#getDivergentSectionState <em>Divergent Section State</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.DivergentSection#getDivID <em>Div ID</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getDivergentSection()
@@ -48,5 +49,31 @@ public interface DivergentSection extends EObject
    * @generated
    */
   void setDivergentSectionState(String value);
+
+  /**
+   * Returns the value of the '<em><b>Div ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Div ID</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Div ID</em>' attribute.
+   * @see #setDivID(int)
+   * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getDivergentSection_DivID()
+   * @model
+   * @generated
+   */
+  int getDivID();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.modes3.test.testLanguage.DivergentSection#getDivID <em>Div ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Div ID</em>' attribute.
+   * @see #getDivID()
+   * @generated
+   */
+  void setDivID(int value);
 
 } // DivergentSection

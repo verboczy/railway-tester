@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.TurnoutImpl#getTurnoutID <em>Turnout ID</em>}</li>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.TurnoutImpl#getTurnoutState <em>Turnout State</em>}</li>
  * </ul>
  *
@@ -28,6 +29,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class TurnoutImpl extends MinimalEObjectImpl.Container implements Turnout
 {
+  /**
+   * The default value of the '{@link #getTurnoutID() <em>Turnout ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTurnoutID()
+   * @generated
+   * @ordered
+   */
+  protected static final int TURNOUT_ID_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getTurnoutID() <em>Turnout ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTurnoutID()
+   * @generated
+   * @ordered
+   */
+  protected int turnoutID = TURNOUT_ID_EDEFAULT;
+
   /**
    * The default value of the '{@link #getTurnoutState() <em>Turnout State</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +95,29 @@ public class TurnoutImpl extends MinimalEObjectImpl.Container implements Turnout
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getTurnoutID()
+  {
+    return turnoutID;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTurnoutID(int newTurnoutID)
+  {
+    int oldTurnoutID = turnoutID;
+    turnoutID = newTurnoutID;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.TURNOUT__TURNOUT_ID, oldTurnoutID, turnoutID));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getTurnoutState()
   {
     return turnoutState;
@@ -102,6 +146,8 @@ public class TurnoutImpl extends MinimalEObjectImpl.Container implements Turnout
   {
     switch (featureID)
     {
+      case TestLanguagePackage.TURNOUT__TURNOUT_ID:
+        return getTurnoutID();
       case TestLanguagePackage.TURNOUT__TURNOUT_STATE:
         return getTurnoutState();
     }
@@ -118,6 +164,9 @@ public class TurnoutImpl extends MinimalEObjectImpl.Container implements Turnout
   {
     switch (featureID)
     {
+      case TestLanguagePackage.TURNOUT__TURNOUT_ID:
+        setTurnoutID((Integer)newValue);
+        return;
       case TestLanguagePackage.TURNOUT__TURNOUT_STATE:
         setTurnoutState((String)newValue);
         return;
@@ -135,6 +184,9 @@ public class TurnoutImpl extends MinimalEObjectImpl.Container implements Turnout
   {
     switch (featureID)
     {
+      case TestLanguagePackage.TURNOUT__TURNOUT_ID:
+        setTurnoutID(TURNOUT_ID_EDEFAULT);
+        return;
       case TestLanguagePackage.TURNOUT__TURNOUT_STATE:
         setTurnoutState(TURNOUT_STATE_EDEFAULT);
         return;
@@ -152,6 +204,8 @@ public class TurnoutImpl extends MinimalEObjectImpl.Container implements Turnout
   {
     switch (featureID)
     {
+      case TestLanguagePackage.TURNOUT__TURNOUT_ID:
+        return turnoutID != TURNOUT_ID_EDEFAULT;
       case TestLanguagePackage.TURNOUT__TURNOUT_STATE:
         return TURNOUT_STATE_EDEFAULT == null ? turnoutState != null : !TURNOUT_STATE_EDEFAULT.equals(turnoutState);
     }
@@ -169,7 +223,9 @@ public class TurnoutImpl extends MinimalEObjectImpl.Container implements Turnout
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (turnoutState: ");
+    result.append(" (turnoutID: ");
+    result.append(turnoutID);
+    result.append(", turnoutState: ");
     result.append(turnoutState);
     result.append(')');
     return result.toString();

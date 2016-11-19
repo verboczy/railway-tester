@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.StraightSection#getStraightSectionState <em>Straight Section State</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.StraightSection#getStrID <em>Str ID</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getStraightSection()
@@ -48,5 +49,31 @@ public interface StraightSection extends EObject
    * @generated
    */
   void setStraightSectionState(String value);
+
+  /**
+   * Returns the value of the '<em><b>Str ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Str ID</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Str ID</em>' attribute.
+   * @see #setStrID(int)
+   * @see hu.bme.mit.modes3.test.testLanguage.TestLanguagePackage#getStraightSection_StrID()
+   * @model
+   * @generated
+   */
+  int getStrID();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.modes3.test.testLanguage.StraightSection#getStrID <em>Str ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Str ID</em>' attribute.
+   * @see #getStrID()
+   * @generated
+   */
+  void setStrID(int value);
 
 } // StraightSection

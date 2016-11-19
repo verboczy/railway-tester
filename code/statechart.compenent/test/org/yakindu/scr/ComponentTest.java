@@ -8,100 +8,181 @@ import org.junit.Test;
 import org.yakindu.scr.InstanceContainer;
 import org.yakindu.scr.section2.Section2Statemachine.State;
 
-/**
- * This test was created by hand. In order to test the connection of the state machines. 
- * @author vkristof
- *
- */
 public class ComponentTest {
-
-	// The component, which contains 6 sections, and 1 turnout.
 	private static InstanceContainer elements;
 	
-
 	@BeforeClass
-	// Initialization at the beginning.
 	public static void init() {
 		elements = new InstanceContainer();
 	}
-			
-		
+	
 	@Before
-	// Resets the state machines before each test.
 	public void reset() {
 		elements = new InstanceContainer();
 	}
-
-	
-	@Test
-	// Turnout is straight, top is occupied, so top should be occupied.
-	public void testTopOccupied() {
-		elements.raiseStraight();
-		elements.raiseOccupyTop();
-		
-		elements.runFullCycle();
-		
-		boolean boo = elements.getSectionTop().isStateActive(State.main_Occupied);
-		assertEquals(true, boo);
-	}
-	
-	@Test
-	// Turnout is divergent, divergent is occupied, so divergent should be occupied.
-	public void testDivOccupied() {
-		elements.raiseDivergent();
-		elements.raiseOccupyDiv();
-		
-		elements.runFullCycle();
-		
-		boolean boo = elements.getSectionDiv().isStateActive(State.main_Occupied);
-		assertEquals(true, boo);
-	}
-	
-	@Test
-	// Turnout is straight, straight is occupied, so straight should be occupied.
-	public void testStrOccupied() {
+				
+	@Test			
+	// STR occupied, turnout is STR, STR can go
+	public void test1() {
 		elements.raiseStraight();
 		elements.raiseOccupyStr();
-		
 		elements.runFullCycle();
-		
-		boolean result = elements.getSectionStr().isStateActive(State.main_Occupied);
-		assertEquals(true, result);
+		assertEquals(false, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionTop().isStateActive(State.main_Stop));
 	}
 	
-	@Test
-	// Turnout is divergent, top is occupied, so top should be occupied.
-	public void testTopOccupiedTurnoutDiv() {
-		elements.raiseDivergent();
-		elements.raiseOccupyTop();
-		
-		elements.runFullCycle();
-		
-		boolean result = elements.getSectionTop().isStateActive(State.main_Occupied);
-		assertEquals(true, result);
-	}
-	
-	@Test
-	// Turnout is straight, divergent is occupied, so divergent should be stopped.
-	public void testDivStopped() {
-		elements.raiseStraight();
-		elements.raiseOccupyDiv();
-		
-		elements.runFullCycle();
-		
-		boolean result = elements.getSectionDiv().isStateActive(State.main_Stop);
-		assertEquals(true, result);
-	}
-	
-	@Test
-	// Turnout is divergent, straight is occupied, so straight should be stopped.
-	public void testStrStopped() {
+	@Test			
+	// STR occupied, turnout is DIV, STR cannot go
+	public void test2() {
 		elements.raiseDivergent();
 		elements.raiseOccupyStr();
-		
 		elements.runFullCycle();
-		
-		boolean result = elements.getSectionStr().isStateActive(State.main_Stop);
-		assertEquals(true, result);
+		assertEquals(true, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionTop().isStateActive(State.main_Stop));
 	}
+	
+	@Test			
+	// DIV occupied, turnout is STR, DIV cannot go
+	public void test3() {
+		elements.raiseStraight();
+		elements.raiseOccupyDiv();
+		elements.runFullCycle();
+		assertEquals(false, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(true, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
+	@Test			
+	// DIV occupied, turnout is DIV, DIV can go
+	public void test4() {
+		elements.raiseDivergent();
+		elements.raiseOccupyDiv();
+		elements.runFullCycle();
+		assertEquals(false, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
+	@Test			
+	// TOP is occupied, turnout is STR,TOP can go
+	public void test5() {
+		elements.raiseStraight();
+		elements.raiseOccupyTop(); 
+		elements.runFullCycle();
+		assertEquals(false, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
+	@Test			
+	// TOP is occupied, turnout is DIV,TOP can go
+	public void test6() {
+		elements.raiseDivergent();
+		elements.raiseOccupyTop(); 
+		elements.runFullCycle();
+		assertEquals(false, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
+	@Test			
+	// STR and DIV are occupied, turnout is STR, STR can go, but DIV cannot
+	public void test7() {
+		elements.raiseStraight();
+		elements.raiseOccupyStr();
+		elements.raiseOccupyDiv();
+		elements.runFullCycle();
+		assertEquals(false, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(true, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
+	@Test			
+	// STR and DIV are occupied, turnout is DIV, DIV can go, but STR cannot
+	public void test8() {
+		elements.raiseDivergent();
+		elements.raiseOccupyStr();
+		elements.raiseOccupyDiv();
+		elements.runFullCycle();
+		assertEquals(true, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
+	@Test			
+	// STR and TOP are occupied, turnout is STR, STR and TOP cannot go
+	public void test9() {
+		elements.raiseStraight();
+		elements.raiseOccupyStr();
+		elements.raiseOccupyTop(); 
+		elements.runFullCycle();
+		assertEquals(true, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(true, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
+	@Test			
+	// STR and TOP are occupied, turnout is DIV, TOP can go, but STR cannot
+	public void test10() {
+		elements.raiseDivergent();
+		elements.raiseOccupyStr();
+		elements.raiseOccupyTop(); 
+		elements.runFullCycle();
+		assertEquals(true, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
+	@Test			
+	// DIV and TOP are occupied, turnout is STR, TOP can go, but DIV cannot
+	public void test11() {
+		elements.raiseStraight();
+		elements.raiseOccupyDiv();
+		elements.raiseOccupyTop(); 
+		elements.runFullCycle();
+		assertEquals(false, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(true, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(false, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
+	@Test			
+	// DIV and TOP are occupied, turnout is DIV, DIV and TOP cannot go
+	public void test12() {
+		elements.raiseDivergent();
+		elements.raiseOccupyDiv();
+		elements.raiseOccupyTop(); 
+		elements.runFullCycle();
+		assertEquals(false, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(true, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(true, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
+	@Test			
+	// STR and DIV and TOP are occupied, turnout is STR, everything is DISABLED
+	public void test13() {
+		elements.raiseStraight();
+		elements.raiseOccupyStr();
+		elements.raiseOccupyDiv();
+		elements.raiseOccupyTop(); 
+		elements.runFullCycle();
+		assertEquals(true, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(true, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(true, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
+	@Test			
+	// STR and DIV and TOP are occupied, turnout is DIV, everything is DISABLED
+	public void test14() {
+		elements.raiseDivergent();
+		elements.raiseOccupyStr();
+		elements.raiseOccupyDiv();
+		elements.raiseOccupyTop(); 
+		elements.runFullCycle();
+		assertEquals(true, elements.getSectionStr().isStateActive(State.main_Stop));
+		assertEquals(true, elements.getSectionDiv().isStateActive(State.main_Stop));
+		assertEquals(true, elements.getSectionTop().isStateActive(State.main_Stop));
+	}
+	
 }

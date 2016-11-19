@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.DivergentSectionImpl#getDivergentSectionState <em>Divergent Section State</em>}</li>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.DivergentSectionImpl#getDivID <em>Div ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +48,26 @@ public class DivergentSectionImpl extends MinimalEObjectImpl.Container implement
    * @ordered
    */
   protected String divergentSectionState = DIVERGENT_SECTION_STATE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDivID() <em>Div ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDivID()
+   * @generated
+   * @ordered
+   */
+  protected static final int DIV_ID_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getDivID() <em>Div ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDivID()
+   * @generated
+   * @ordered
+   */
+  protected int divID = DIV_ID_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,6 +118,29 @@ public class DivergentSectionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getDivID()
+  {
+    return divID;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDivID(int newDivID)
+  {
+    int oldDivID = divID;
+    divID = newDivID;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.DIVERGENT_SECTION__DIV_ID, oldDivID, divID));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -104,6 +148,8 @@ public class DivergentSectionImpl extends MinimalEObjectImpl.Container implement
     {
       case TestLanguagePackage.DIVERGENT_SECTION__DIVERGENT_SECTION_STATE:
         return getDivergentSectionState();
+      case TestLanguagePackage.DIVERGENT_SECTION__DIV_ID:
+        return getDivID();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,6 +166,9 @@ public class DivergentSectionImpl extends MinimalEObjectImpl.Container implement
     {
       case TestLanguagePackage.DIVERGENT_SECTION__DIVERGENT_SECTION_STATE:
         setDivergentSectionState((String)newValue);
+        return;
+      case TestLanguagePackage.DIVERGENT_SECTION__DIV_ID:
+        setDivID((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,6 +187,9 @@ public class DivergentSectionImpl extends MinimalEObjectImpl.Container implement
       case TestLanguagePackage.DIVERGENT_SECTION__DIVERGENT_SECTION_STATE:
         setDivergentSectionState(DIVERGENT_SECTION_STATE_EDEFAULT);
         return;
+      case TestLanguagePackage.DIVERGENT_SECTION__DIV_ID:
+        setDivID(DIV_ID_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -154,6 +206,8 @@ public class DivergentSectionImpl extends MinimalEObjectImpl.Container implement
     {
       case TestLanguagePackage.DIVERGENT_SECTION__DIVERGENT_SECTION_STATE:
         return DIVERGENT_SECTION_STATE_EDEFAULT == null ? divergentSectionState != null : !DIVERGENT_SECTION_STATE_EDEFAULT.equals(divergentSectionState);
+      case TestLanguagePackage.DIVERGENT_SECTION__DIV_ID:
+        return divID != DIV_ID_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -171,6 +225,8 @@ public class DivergentSectionImpl extends MinimalEObjectImpl.Container implement
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (divergentSectionState: ");
     result.append(divergentSectionState);
+    result.append(", divID: ");
+    result.append(divID);
     result.append(')');
     return result.toString();
   }

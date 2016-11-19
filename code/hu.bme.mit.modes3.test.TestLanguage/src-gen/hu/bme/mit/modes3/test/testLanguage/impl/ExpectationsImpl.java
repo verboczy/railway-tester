@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.ExpectationsImpl#getExpectedTurnoutID <em>Expected Turnout ID</em>}</li>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.ExpectationsImpl#getStraightExpectation <em>Straight Expectation</em>}</li>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.ExpectationsImpl#getDivergentExpectation <em>Divergent Expectation</em>}</li>
  *   <li>{@link hu.bme.mit.modes3.test.testLanguage.impl.ExpectationsImpl#getTopExpectation <em>Top Expectation</em>}</li>
@@ -35,6 +36,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ExpectationsImpl extends MinimalEObjectImpl.Container implements Expectations
 {
+  /**
+   * The default value of the '{@link #getExpectedTurnoutID() <em>Expected Turnout ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpectedTurnoutID()
+   * @generated
+   * @ordered
+   */
+  protected static final int EXPECTED_TURNOUT_ID_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getExpectedTurnoutID() <em>Expected Turnout ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpectedTurnoutID()
+   * @generated
+   * @ordered
+   */
+  protected int expectedTurnoutID = EXPECTED_TURNOUT_ID_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getStraightExpectation() <em>Straight Expectation</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -84,6 +105,29 @@ public class ExpectationsImpl extends MinimalEObjectImpl.Container implements Ex
   protected EClass eStaticClass()
   {
     return TestLanguagePackage.Literals.EXPECTATIONS;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getExpectedTurnoutID()
+  {
+    return expectedTurnoutID;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpectedTurnoutID(int newExpectedTurnoutID)
+  {
+    int oldExpectedTurnoutID = expectedTurnoutID;
+    expectedTurnoutID = newExpectedTurnoutID;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TestLanguagePackage.EXPECTATIONS__EXPECTED_TURNOUT_ID, oldExpectedTurnoutID, expectedTurnoutID));
   }
 
   /**
@@ -260,6 +304,8 @@ public class ExpectationsImpl extends MinimalEObjectImpl.Container implements Ex
   {
     switch (featureID)
     {
+      case TestLanguagePackage.EXPECTATIONS__EXPECTED_TURNOUT_ID:
+        return getExpectedTurnoutID();
       case TestLanguagePackage.EXPECTATIONS__STRAIGHT_EXPECTATION:
         return getStraightExpectation();
       case TestLanguagePackage.EXPECTATIONS__DIVERGENT_EXPECTATION:
@@ -280,6 +326,9 @@ public class ExpectationsImpl extends MinimalEObjectImpl.Container implements Ex
   {
     switch (featureID)
     {
+      case TestLanguagePackage.EXPECTATIONS__EXPECTED_TURNOUT_ID:
+        setExpectedTurnoutID((Integer)newValue);
+        return;
       case TestLanguagePackage.EXPECTATIONS__STRAIGHT_EXPECTATION:
         setStraightExpectation((StraightExpectation)newValue);
         return;
@@ -303,6 +352,9 @@ public class ExpectationsImpl extends MinimalEObjectImpl.Container implements Ex
   {
     switch (featureID)
     {
+      case TestLanguagePackage.EXPECTATIONS__EXPECTED_TURNOUT_ID:
+        setExpectedTurnoutID(EXPECTED_TURNOUT_ID_EDEFAULT);
+        return;
       case TestLanguagePackage.EXPECTATIONS__STRAIGHT_EXPECTATION:
         setStraightExpectation((StraightExpectation)null);
         return;
@@ -326,6 +378,8 @@ public class ExpectationsImpl extends MinimalEObjectImpl.Container implements Ex
   {
     switch (featureID)
     {
+      case TestLanguagePackage.EXPECTATIONS__EXPECTED_TURNOUT_ID:
+        return expectedTurnoutID != EXPECTED_TURNOUT_ID_EDEFAULT;
       case TestLanguagePackage.EXPECTATIONS__STRAIGHT_EXPECTATION:
         return straightExpectation != null;
       case TestLanguagePackage.EXPECTATIONS__DIVERGENT_EXPECTATION:
@@ -334,6 +388,23 @@ public class ExpectationsImpl extends MinimalEObjectImpl.Container implements Ex
         return topExpectation != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (expectedTurnoutID: ");
+    result.append(expectedTurnoutID);
+    result.append(')');
+    return result.toString();
   }
 
 } //ExpectationsImpl
